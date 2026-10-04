@@ -42,3 +42,32 @@ C:\Users\Xevi\Downloads\Versio0-master\Versio0-master\Versio0-master\FlightSimul
 C:\Users\Xevi\Downloads\Versio0-master\Versio0-master\Versio0-master\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.pdb
 C:\Users\Xevi\Downloads\Versio0-master\Versio0-master\Versio0-master\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.genruntimeconfig.cache
 C:\Users\Xevi\Downloads\Versio0-master\Versio0-master\Versio0-master\FlightSimulator\obj\Debug\net10.0-windows\ref\FlightSimulator.dll
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\bin\Debug\net10.0-windows\FlightSimulator.exe
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\bin\Debug\net10.0-windows\FlightSimulator.deps.json
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\bin\Debug\net10.0-windows\FlightSimulator.runtimeconfig.json
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\bin\Debug\net10.0-windows\FlightSimulator.dll
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\bin\Debug\net10.0-windows\FlightSimulator.pdb
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\bin\Debug\net10.0-windows\FlightLib.dll
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\bin\Debug\net10.0-windows\SimulatorConsole.exe
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\bin\Debug\net10.0-windows\FlightLib.pdb
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\bin\Debug\net10.0-windows\SimulatorConsole.pdb
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\bin\Debug\net10.0-windows\SimulatorConsole.exe.config
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.csproj.AssemblyReference.cache
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.FlightForm.resources
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.InformationForm.resources
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.MenuForm.resources
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.ParametrosForm.resources
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.SimulationForm.resources
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.csproj.GenerateResource.cache
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.AssemblyInfoInputs.cache
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.AssemblyInfo.cs
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.csproj.CoreCompileInputs.cache
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.sourcelink.json
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSi.B36F22EA.Up2Date
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.dll
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\refint\FlightSimulator.dll
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.pdb
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.genruntimeconfig.cache
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\ref\FlightSimulator.dll
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.Properties.Resources.resources

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlightSimulator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7fa0e856f3d14f1e22bb87a2ff0c1ed2d35877bf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f9668888ea3c2680ed7114927f9e8edd3b97861")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlightSimulator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlightSimulator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

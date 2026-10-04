@@ -1,11 +1,47 @@
 {
   "version": 4,
   "targets": {
-    "net10.0-windows": {}
+    "net10.0-windows": {
+      "FlightLib/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/FlightLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FlightLib.dll": {}
+        }
+      },
+      "SimulatorConsole/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "FlightLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SimulatorConsole.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SimulatorConsole.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "FlightLib/1.0.0": {
+      "type": "project",
+      "path": "../FlightLib/FlightLib.csproj",
+      "msbuildProject": "../FlightLib/FlightLib.csproj"
+    },
+    "SimulatorConsole/1.0.0": {
+      "type": "project",
+      "path": "../SimulatorConsole/SimulatorConsole.csproj",
+      "msbuildProject": "../SimulatorConsole/SimulatorConsole.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0-windows": []
+    "net10.0-windows": [
+      "FlightLib >= 1.0.0",
+      "SimulatorConsole >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\ainoa\\.nuget\\packages\\": {}
@@ -34,7 +70,14 @@
         "net10.0-windows": {
           "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\FlightLib\\FlightLib.csproj": {
+              "projectPath": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\FlightLib\\FlightLib.csproj"
+            },
+            "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\SimulatorConsole\\SimulatorConsole.csproj": {
+              "projectPath": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\SimulatorConsole\\SimulatorConsole.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

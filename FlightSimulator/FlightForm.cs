@@ -4,7 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using FlightLib; // <-- OBLIGATORIO para quitar la línea roja de FlightPlan
+using FlightLib; 
 
 namespace FlightSimulator
 {

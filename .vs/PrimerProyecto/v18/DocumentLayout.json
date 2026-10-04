@@ -3,20 +3,67 @@
   "WorkspaceRootPath": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightlib\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|solutionrelative:flightlib\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightsimulator\\simulationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|solutionrelative:flightsimulator\\simulationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\flightlib\\flightplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|solutionrelative:flightlib\\flightplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightsimulator\\parametrosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|solutionrelative:flightsimulator\\parametrosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A87A27D-F5E9-4F8E-B229-683005A87FF1}|SimulatorConsole\\SimulatorConsole.csproj|C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\simulatorconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightsimulator\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|solutionrelative:flightsimulator\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightsimulator\\informationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|solutionrelative:flightsimulator\\informationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightsimulator\\flightform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|solutionrelative:flightsimulator\\flightform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightsimulator\\simulationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|solutionrelative:flightsimulator\\simulationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightsimulator\\informationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|solutionrelative:flightsimulator\\informationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightsimulator\\menuform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|solutionrelative:flightsimulator\\menuform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightsimulator\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|solutionrelative:flightsimulator\\menuform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A87A27D-F5E9-4F8E-B229-683005A87FF1}|SimulatorConsole\\SimulatorConsole.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\simulatorconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A87A27D-F5E9-4F8E-B229-683005A87FF1}|SimulatorConsole\\SimulatorConsole.csproj|solutionrelative:simulatorconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightsimulator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|solutionrelative:flightsimulator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightsimulator\\parametrosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|solutionrelative:flightsimulator\\parametrosform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightsimulator\\flightform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B4D51F4-14E5-9E19-6B73-FF698909CDCA}|FlightSimulator\\FlightSimulator.csproj|solutionrelative:flightsimulator\\flightform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|c:\\users\\ainoa\\onedrive\\escritorio\\upc\\26-27\\inform\u00E0tica ii\\projecte\\primerproyecto - ainoa gass\u00F3\\primerproyecto\\flightlib\\flightplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|solutionrelative:flightlib\\flightplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\flightlib\\flightplanlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B53FCD9-7A68-42EF-A9DA-B0628F94A07E}|FlightLib\\FlightLib.csproj|solutionrelative:flightlib\\flightplanlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ainoa\\Downloads\\Versio0-master\\Versio0-master\\FlightSimulator\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,59 +73,215 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FlightPlanList.cs",
-              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightLib\\FlightPlanList.cs",
-              "RelativeDocumentMoniker": "FlightLib\\FlightPlanList.cs",
-              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightLib\\FlightPlanList.cs",
-              "RelativeToolTip": "FlightLib\\FlightPlanList.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-20T15:27:05.781Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "MenuForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\MenuForm.cs",
+              "RelativeDocumentMoniker": "FlightSimulator\\MenuForm.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\MenuForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FlightSimulator\\MenuForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T11:13:00.674Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InformationForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\InformationForm.cs",
+              "RelativeDocumentMoniker": "FlightSimulator\\InformationForm.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\InformationForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FlightSimulator\\InformationForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-03T14:07:23.561Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SimulationForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\SimulationForm.cs",
+              "RelativeDocumentMoniker": "FlightSimulator\\SimulationForm.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\SimulationForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FlightSimulator\\SimulationForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T10:59:22.355Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FlightForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\FlightForm.cs",
+              "RelativeDocumentMoniker": "FlightSimulator\\FlightForm.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\FlightForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FlightSimulator\\FlightForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T11:19:41.02Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ParametrosForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\ParametrosForm.cs",
+              "RelativeDocumentMoniker": "FlightSimulator\\ParametrosForm.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\ParametrosForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FlightSimulator\\ParametrosForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T11:30:09.394Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SimulationForm.cs",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\SimulationForm.cs",
+              "RelativeDocumentMoniker": "FlightSimulator\\SimulationForm.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\SimulationForm.cs",
+              "RelativeToolTip": "FlightSimulator\\SimulationForm.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAqwEIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T11:00:35.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MenuForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\MenuForm.Designer.cs",
+              "RelativeDocumentMoniker": "FlightSimulator\\MenuForm.Designer.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\MenuForm.Designer.cs",
+              "RelativeToolTip": "FlightSimulator\\MenuForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T12:02:35.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InformationForm.cs",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\InformationForm.cs",
+              "RelativeDocumentMoniker": "FlightSimulator\\InformationForm.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\InformationForm.cs",
+              "RelativeToolTip": "FlightSimulator\\InformationForm.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T11:13:06.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FlightForm.cs",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\FlightForm.cs",
+              "RelativeDocumentMoniker": "FlightSimulator\\FlightForm.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\FlightForm.cs",
+              "RelativeToolTip": "FlightSimulator\\FlightForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T11:29:37.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MenuForm.cs",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\MenuForm.cs",
+              "RelativeDocumentMoniker": "FlightSimulator\\MenuForm.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\MenuForm.cs",
+              "RelativeToolTip": "FlightSimulator\\MenuForm.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T11:20:12.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ParametrosForm.cs",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\ParametrosForm.cs",
+              "RelativeDocumentMoniker": "FlightSimulator\\ParametrosForm.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\ParametrosForm.cs",
+              "RelativeToolTip": "FlightSimulator\\ParametrosForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T11:30:11.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\SimulatorConsole\\Program.cs",
               "RelativeDocumentMoniker": "SimulatorConsole\\Program.cs",
               "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\SimulatorConsole\\Program.cs",
               "RelativeToolTip": "SimulatorConsole\\Program.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwB8AAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-09T13:31:48.528Z",
+              "WhenOpened": "2026-10-04T11:30:35.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\Program.cs",
+              "RelativeDocumentMoniker": "FlightSimulator\\Program.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightSimulator\\Program.cs",
+              "RelativeToolTip": "FlightSimulator\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T11:30:27.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "FlightPlan.cs",
               "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightLib\\FlightPlan.cs",
               "RelativeDocumentMoniker": "FlightLib\\FlightPlan.cs",
               "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightLib\\FlightPlan.cs",
               "RelativeToolTip": "FlightLib\\FlightPlan.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAzwEMAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAA/wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-09T13:31:47.415Z",
+              "WhenOpened": "2026-10-04T11:12:44.254Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Position.cs",
-              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightLib\\Position.cs",
-              "RelativeDocumentMoniker": "FlightLib\\Position.cs",
-              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightLib\\Position.cs",
-              "RelativeToolTip": "FlightLib\\Position.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "FlightPlanList.cs",
+              "DocumentMoniker": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightLib\\FlightPlanList.cs",
+              "RelativeDocumentMoniker": "FlightLib\\FlightPlanList.cs",
+              "ToolTip": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Inform\u00E0tica II\\Projecte\\PrimerProyecto - Ainoa Gass\u00F3\\PrimerProyecto\\FlightLib\\FlightPlanList.cs",
+              "RelativeToolTip": "FlightLib\\FlightPlanList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-09T13:31:47.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-03T13:15:30.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ainoa\\Downloads\\Versio0-master\\Versio0-master\\FlightSimulator\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Downloads\\Versio0-master\\Versio0-master\\FlightSimulator\\Program.cs",
+              "ToolTip": "C:\\Users\\ainoa\\Downloads\\Versio0-master\\Versio0-master\\FlightSimulator\\Program.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Downloads\\Versio0-master\\Versio0-master\\FlightSimulator\\Program.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-03T13:02:06.248Z"
             }
           ]
         }

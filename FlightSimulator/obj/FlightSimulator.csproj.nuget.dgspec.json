@@ -4,6 +4,25 @@
     "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\FlightSimulator\\FlightSimulator.csproj": {}
   },
   "projects": {
+    "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\FlightLib\\FlightLib.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\FlightLib\\FlightLib.csproj",
+        "projectName": "FlightLib",
+        "projectPath": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\FlightLib\\FlightLib.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net472": {
+            "framework": "net472",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "framework": "net472"
+        }
+      }
+    },
     "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\FlightSimulator\\FlightSimulator.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -28,7 +47,14 @@
           "net10.0-windows": {
             "framework": "net10.0-windows7.0",
             "targetAlias": "net10.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\FlightLib\\FlightLib.csproj": {
+                "projectPath": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\FlightLib\\FlightLib.csproj"
+              },
+              "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\SimulatorConsole\\SimulatorConsole.csproj": {
+                "projectPath": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\SimulatorConsole\\SimulatorConsole.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -357,6 +383,29 @@
             "System.Xml.XPath": "(,4.3.32767]",
             "System.Xml.XPath.XDocument": "(,5.0.32767]"
           }
+        }
+      }
+    },
+    "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\SimulatorConsole\\SimulatorConsole.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\SimulatorConsole\\SimulatorConsole.csproj",
+        "projectName": "SimulatorConsole",
+        "projectPath": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\SimulatorConsole\\SimulatorConsole.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net472": {
+            "framework": "net472",
+            "projectReferences": {
+              "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\FlightLib\\FlightLib.csproj": {
+                "projectPath": "C:\\Users\\ainoa\\OneDrive\\Escritorio\\UPC\\26-27\\Informàtica II\\Projecte\\PrimerProyecto - Ainoa Gassó\\PrimerProyecto\\FlightLib\\FlightLib.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "framework": "net472"
         }
       }
     }

@@ -10,3 +10,9 @@ C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProy
 C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto #1.4 - Ainoa Gassó\PrimerProyecto\FlightLib\obj\Debug\FlightLib.csproj.CoreCompileInputs.cache
 C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto #1.4 - Ainoa Gassó\PrimerProyecto\FlightLib\obj\Debug\FlightLib.dll
 C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto #1.4 - Ainoa Gassó\PrimerProyecto\FlightLib\obj\Debug\FlightLib.pdb
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightLib\bin\Debug\FlightLib.dll
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightLib\bin\Debug\FlightLib.pdb
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightLib\obj\Debug\FlightLib.csproj.AssemblyReference.cache
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightLib\obj\Debug\FlightLib.csproj.CoreCompileInputs.cache
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightLib\obj\Debug\FlightLib.dll
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightLib\obj\Debug\FlightLib.pdb
