@@ -37,12 +37,12 @@ namespace FlightLib
         }
 
         //Recorre todos los elementos del vector y llama al método Mover para mover cada uno
-        public void Mover (double tiempo)
+        public void Move (double tiempo)
         {
             int i = 0;
             while (i<number)
             {
-                vector[i].Mover(tiempo);
+                vector[i].Move(tiempo);
                 i++;
             }
         }

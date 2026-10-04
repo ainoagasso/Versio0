@@ -49,11 +49,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FlightLib\FlightLib.csproj">
-      <Project>{3b53fcd9-7a68-42ef-a9da-b0628f94a07e}</Project>
-      <Name>FlightLib</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
