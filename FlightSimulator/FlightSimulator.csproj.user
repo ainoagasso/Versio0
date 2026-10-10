@@ -4,6 +4,9 @@
     <_LastSelectedProfileId>C:\Users\ainoa\Downloads\Versio0-master\Versio0-master\FlightSimulator\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="DataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FlightForm.cs">
       <SubType>Form</SubType>
     </Compile>

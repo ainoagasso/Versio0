@@ -11,6 +11,11 @@ namespace FlightLib
         FlightPlan[] vector = new FlightPlan[10];
         int number = 0;
 
+        public int DameNum()
+        {
+            return this.number;
+        }
+
         public int AddFlightPlan(FlightPlan p)
         {
             if (number == 10)

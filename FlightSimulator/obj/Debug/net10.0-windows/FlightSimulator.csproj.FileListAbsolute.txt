@@ -71,3 +71,4 @@ C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProy
 C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.genruntimeconfig.cache
 C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\ref\FlightSimulator.dll
 C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.Properties.Resources.resources
+C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\FlightSimulator\obj\Debug\net10.0-windows\FlightSimulator.DataForm.resources

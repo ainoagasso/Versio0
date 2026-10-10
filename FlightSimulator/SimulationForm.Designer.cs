@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panelMap = new Panel();
             pbAvion2 = new PictureBox();
             pbAvion1 = new PictureBox();
@@ -36,6 +37,9 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            auto = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
+            datos = new Button();
             panelMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAvion2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAvion1).BeginInit();
@@ -50,9 +54,11 @@
             panelMap.Name = "panelMap";
             panelMap.Size = new Size(800, 700);
             panelMap.TabIndex = 0;
+            panelMap.Paint += panelMap_Paint;
             // 
             // pbAvion2
             // 
+            pbAvion2.BackColor = Color.Transparent;
             pbAvion2.Image = Properties.Resources.plane;
             pbAvion2.Location = new Point(372, 260);
             pbAvion2.Name = "pbAvion2";
@@ -64,6 +70,7 @@
             // 
             // pbAvion1
             // 
+            pbAvion1.BackColor = Color.Transparent;
             pbAvion1.Image = Properties.Resources.plane;
             pbAvion1.Location = new Point(219, 96);
             pbAvion1.Name = "pbAvion1";
@@ -75,10 +82,10 @@
             // 
             // Mover
             // 
-            Mover.BackColor = SystemColors.Control;
+            Mover.BackColor = SystemColors.ControlLightLight;
             Mover.Location = new Point(61, 170);
             Mover.Name = "Mover";
-            Mover.Size = new Size(94, 29);
+            Mover.Size = new Size(109, 29);
             Mover.TabIndex = 2;
             Mover.Text = "Mover";
             Mover.UseVisualStyleBackColor = false;
@@ -124,11 +131,36 @@
             label4.TabIndex = 6;
             label4.Text = "699";
             // 
+            // auto
+            // 
+            auto.Location = new Point(61, 228);
+            auto.Name = "auto";
+            auto.Size = new Size(109, 29);
+            auto.TabIndex = 7;
+            auto.Text = "Automático";
+            auto.UseVisualStyleBackColor = true;
+            auto.Click += auto_Click;
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
+            // datos
+            // 
+            datos.Location = new Point(61, 278);
+            datos.Name = "datos";
+            datos.Size = new Size(109, 29);
+            datos.TabIndex = 8;
+            datos.Text = "Datos";
+            datos.UseVisualStyleBackColor = true;
+            // 
             // SimulationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1100, 756);
+            Controls.Add(datos);
+            Controls.Add(auto);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -155,5 +187,8 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private Button auto;
+        private System.Windows.Forms.Timer timer1;
+        private Button datos;
     }
 }

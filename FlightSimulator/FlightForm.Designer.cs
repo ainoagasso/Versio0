@@ -174,7 +174,7 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 15F);
-            lblTitulo.Location = new Point(361, 28);
+            lblTitulo.Location = new Point(295, 26);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(98, 35);
             lblTitulo.TabIndex = 15;
