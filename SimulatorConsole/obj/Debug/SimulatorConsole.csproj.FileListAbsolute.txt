@@ -28,3 +28,13 @@ C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProy
 C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\SimulatorConsole\obj\Debug\Simulato.840E03AB.Up2Date
 C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\SimulatorConsole\obj\Debug\SimulatorConsole.exe
 C:\Users\ainoa\OneDrive\Escritorio\UPC\26-27\Informàtica II\Projecte\PrimerProyecto - Ainoa Gassó\PrimerProyecto\SimulatorConsole\obj\Debug\SimulatorConsole.pdb
+C:\Users\Laiap\Documents\Info 2\Projecte Info (v0)\Versio0\SimulatorConsole\bin\Debug\SimulatorConsole.exe.config
+C:\Users\Laiap\Documents\Info 2\Projecte Info (v0)\Versio0\SimulatorConsole\bin\Debug\SimulatorConsole.exe
+C:\Users\Laiap\Documents\Info 2\Projecte Info (v0)\Versio0\SimulatorConsole\bin\Debug\SimulatorConsole.pdb
+C:\Users\Laiap\Documents\Info 2\Projecte Info (v0)\Versio0\SimulatorConsole\bin\Debug\FlightLib.dll
+C:\Users\Laiap\Documents\Info 2\Projecte Info (v0)\Versio0\SimulatorConsole\bin\Debug\FlightLib.pdb
+C:\Users\Laiap\Documents\Info 2\Projecte Info (v0)\Versio0\SimulatorConsole\obj\Debug\SimulatorConsole.csproj.AssemblyReference.cache
+C:\Users\Laiap\Documents\Info 2\Projecte Info (v0)\Versio0\SimulatorConsole\obj\Debug\SimulatorConsole.csproj.CoreCompileInputs.cache
+C:\Users\Laiap\Documents\Info 2\Projecte Info (v0)\Versio0\SimulatorConsole\obj\Debug\Simulato.840E03AB.Up2Date
+C:\Users\Laiap\Documents\Info 2\Projecte Info (v0)\Versio0\SimulatorConsole\obj\Debug\SimulatorConsole.exe
+C:\Users\Laiap\Documents\Info 2\Projecte Info (v0)\Versio0\SimulatorConsole\obj\Debug\SimulatorConsole.pdb

@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\ainoa\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\ainoa\\.nuget\\packages"
+      "C:\\Users\\Laiap\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Laiap\\.nuget\\packages"
     ],
     "configProperties": {
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false,
