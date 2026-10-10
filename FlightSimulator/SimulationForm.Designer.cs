@@ -153,6 +153,7 @@
             datos.TabIndex = 8;
             datos.Text = "Datos";
             datos.UseVisualStyleBackColor = true;
+            datos.Click += datos_Click;
             // 
             // SimulationForm
             // 

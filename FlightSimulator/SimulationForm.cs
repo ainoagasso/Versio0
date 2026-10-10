@@ -188,6 +188,12 @@ namespace FlightSimulator
                 auto.Text = "Automático";
             }
         }
+
+        private void datos_Click(object sender, EventArgs e)
+        {
+            DatosVueloForm form = new DatosVueloForm(plan1, plan2);
+            form.ShowDialog();
+        }
     }
 }
  
