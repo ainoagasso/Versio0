@@ -69,6 +69,19 @@ namespace FlightSimulator
 
             }
 
+            if (plan1 != null && plan2 != null)
+            {
+                bool conflicto = plan1.Conflicto(plan2, distanciaSeguridad);
+                if (conflicto)
+                {
+                    labelAlarma.Text = "ALERTA: Els vols es troben en conflicte!"; //poso l'alarma que avisa si els vols estan en conflicte
+                }
+                else
+                {
+                    labelAlarma.Text = "";
+                }
+            }
+
 
             panelMap.Invalidate(); // Forcem la finestra a redibuixar-se per actualitzar la línia de trajectòria i l'elipse de seguretat
             panelMap.Update(); // Forcem la finestra a actualitzar-se per mostrar els canvis immediatament
@@ -133,7 +146,7 @@ namespace FlightSimulator
                 float radi = (float)distanciaSeguridad; //el radi de l'elipsi és la distància de seguretat
                 float diametre = radi * 2f;
 
-                //centre de l'elipsi = posició de l'avió - radi. perquè el centre de l'elipsi sigui el mateix que el centre del avió
+                //centre de l'elipsi = centre del PictureBox de l'avió, que es calcula com la posició del PictureBox més la meitat de l'amplada i l'alçada del PictureBox
                 float x1 = (float)pbAvion1.Location.X + (pbAvion1.Width / 2f);
                 float y1 = (float)pbAvion1.Location.Y + (pbAvion1.Height / 2f);
 
@@ -162,6 +175,23 @@ namespace FlightSimulator
                 estado = 0;
                 auto.Text = "Automático";
             }
+
+            //torno a posar l'alarma si hi ha conflicte després de parar o iniciar la simulació automàtica
+            if (plan1 != null && plan2 != null)
+            {
+                bool conflicto = plan1.Conflicto(plan2, distanciaSeguridad);
+                if (conflicto)
+                {
+                    labelAlarma.Text = "ALERTA: Els vols es troben en conflicte!"; //poso l'alarma que avisa si els vols estan en conflicte
+                }
+                else
+                {
+                    labelAlarma.Text = "";
+                }
+            }
+
+            panelMap.Invalidate();
+            panelMap.Update();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -193,6 +223,23 @@ namespace FlightSimulator
         {
             DatosVueloForm form = new DatosVueloForm(plan1, plan2);
             form.ShowDialog();
+        }
+
+        //Botó de predicció de conflicte, que comprova si els vols es trobaran en conflicte en el futur
+        private void PrediccionConflicto_Click(object sender, EventArgs e)
+        {
+            if (plan1 != null && plan2 != null)
+            {
+                bool conflicto = plan1.PredecirConflicto(plan1, plan2, distanciaSeguridad);
+                if (conflicto)
+                {
+                    MessageBox.Show("Els vols es trobaran en conflicte!");
+                }
+                else
+                {
+                    MessageBox.Show("Els vols no es trobaran en conflicte.");
+                }
+            }
         }
     }
 }

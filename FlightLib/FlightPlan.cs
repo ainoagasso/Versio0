@@ -97,9 +97,65 @@ namespace FlightLib
         public bool Conflicto(FlightPlan b,double distanciaSeguridad)
         {
             bool conflicto = false;
-            if (this.currentPosition.Distancia(b.currentPosition) < distanciaSeguridad)
+            if (this.currentPosition.Distancia(b.currentPosition) < distanciaSeguridad*2)
                 conflicto = true;
             return conflicto;
+        }
+
+        public bool PredecirConflicto(FlightPlan a, FlightPlan b, double distanciaSeguridad)
+        {
+            //obtinc posicions actuals dels dos avions
+            double x1 = a.currentPosition.GetX();
+            double y1 = a.currentPosition.GetY();
+            double x2 = b.currentPosition.GetX();
+            double y2 = b.currentPosition.GetY();
+
+            //obtinc posicions inicials dels dos avions
+            double xi1 = a.initialPosition.GetX();
+            double yi1 = a.initialPosition.GetY();
+            double xi2 = b.initialPosition.GetX();
+            double yi2 = b.initialPosition.GetY();
+
+            //obtinc posicions finals dels dos avions
+            double xf1 = a.finalPosition.GetX();
+            double yf1 = a.finalPosition.GetY();
+            double xf2 = b.finalPosition.GetX();
+            double yf2 = b.finalPosition.GetY();
+
+            //obtinc velocitats dels dos avions
+            double hipotenusa1 = Math.Sqrt(Math.Pow((xf1 - xi1), 2) + Math.Pow ((yf1 - yi1), 2));
+            double hipotenusa2 = Math.Sqrt(Math.Pow((xf2 - xi2), 2) + Math.Pow((yf2 - yi2), 2));
+
+            double vx1 = ((xf1 - xi1) / hipotenusa1) * a.velocidad;
+            double vy1 = ((yf1 - yi1) / hipotenusa1) * a.velocidad;
+            double vx2 = ((xf2 - xi2) / hipotenusa2) * b.velocidad;
+            double vy2 = ((yf2 - yi2) / hipotenusa2) * b.velocidad;
+
+            //variacions de posició i velocitat
+            double dx = x2 - x1;
+            double dy = y2 - y1;
+            double dvx = vx2 - vx1;
+            double dvy = vy2 - vy1;
+
+            //obtinc el temps amb la derivada 
+            double numerador = -((dx*dvx) + (dy * dvy));
+            double denominador = (dvx * dvx) + (dvy * dvy);
+            double t = numerador / denominador;
+
+            if (t >= 0);
+            { 
+                double x1t = x1 + vx1 * t;
+                double y1t = y1 + vy1 * t;
+                double x2t = x2 + vx2 * t;
+                double y2t = y2 + vy2 * t;
+
+                double distanciaMinima = Math.Sqrt(Math.Pow((x2t - x1t), 2) + Math.Pow((y2t - y1t), 2));
+
+                if (distanciaMinima < distanciaSeguridad)
+                    return true;
+                else
+                    return false;
+            }
         }
         public void EscribeConsola()
         // escribe en consola los datos del plan de vuelo

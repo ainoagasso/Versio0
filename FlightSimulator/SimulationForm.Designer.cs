@@ -40,6 +40,8 @@
             auto = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
             datos = new Button();
+            labelAlarma = new Label();
+            PrediccionConflicto = new Button();
             panelMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAvion2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAvion1).BeginInit();
@@ -50,9 +52,10 @@
             panelMap.BackColor = SystemColors.ActiveBorder;
             panelMap.Controls.Add(pbAvion2);
             panelMap.Controls.Add(pbAvion1);
-            panelMap.Location = new Point(276, 31);
+            panelMap.Location = new Point(448, 50);
+            panelMap.Margin = new Padding(5);
             panelMap.Name = "panelMap";
-            panelMap.Size = new Size(800, 700);
+            panelMap.Size = new Size(1300, 1120);
             panelMap.TabIndex = 0;
             panelMap.Paint += panelMap_Paint;
             // 
@@ -60,9 +63,10 @@
             // 
             pbAvion2.BackColor = Color.Transparent;
             pbAvion2.Image = Properties.Resources.plane;
-            pbAvion2.Location = new Point(372, 260);
+            pbAvion2.Location = new Point(604, 416);
+            pbAvion2.Margin = new Padding(5);
             pbAvion2.Name = "pbAvion2";
-            pbAvion2.Size = new Size(100, 62);
+            pbAvion2.Size = new Size(162, 99);
             pbAvion2.SizeMode = PictureBoxSizeMode.StretchImage;
             pbAvion2.TabIndex = 1;
             pbAvion2.TabStop = false;
@@ -72,9 +76,10 @@
             // 
             pbAvion1.BackColor = Color.Transparent;
             pbAvion1.Image = Properties.Resources.plane;
-            pbAvion1.Location = new Point(219, 96);
+            pbAvion1.Location = new Point(356, 154);
+            pbAvion1.Margin = new Padding(5);
             pbAvion1.Name = "pbAvion1";
-            pbAvion1.Size = new Size(100, 62);
+            pbAvion1.Size = new Size(162, 99);
             pbAvion1.SizeMode = PictureBoxSizeMode.StretchImage;
             pbAvion1.TabIndex = 0;
             pbAvion1.TabStop = false;
@@ -83,9 +88,10 @@
             // Mover
             // 
             Mover.BackColor = SystemColors.ControlLightLight;
-            Mover.Location = new Point(61, 170);
+            Mover.Location = new Point(99, 272);
+            Mover.Margin = new Padding(5);
             Mover.Name = "Mover";
-            Mover.Size = new Size(109, 29);
+            Mover.Size = new Size(177, 46);
             Mover.TabIndex = 2;
             Mover.Text = "Mover";
             Mover.UseVisualStyleBackColor = false;
@@ -95,9 +101,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(244, 31);
+            label1.Location = new Point(396, 50);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(26, 31);
+            label1.Size = new Size(42, 50);
             label1.TabIndex = 3;
             label1.Text = "0";
             // 
@@ -105,9 +112,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(276, -3);
+            label2.Location = new Point(448, -5);
+            label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new Size(26, 31);
+            label2.Size = new Size(42, 50);
             label2.TabIndex = 4;
             label2.Text = "0";
             // 
@@ -115,9 +123,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(1026, -3);
+            label3.Location = new Point(1667, -5);
+            label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new Size(50, 31);
+            label3.Size = new Size(82, 50);
             label3.TabIndex = 5;
             label3.Text = "799";
             // 
@@ -125,17 +134,19 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(220, 700);
+            label4.Location = new Point(358, 1120);
+            label4.Margin = new Padding(5, 0, 5, 0);
             label4.Name = "label4";
-            label4.Size = new Size(50, 31);
+            label4.Size = new Size(82, 50);
             label4.TabIndex = 6;
             label4.Text = "699";
             // 
             // auto
             // 
-            auto.Location = new Point(61, 228);
+            auto.Location = new Point(99, 365);
+            auto.Margin = new Padding(5);
             auto.Name = "auto";
-            auto.Size = new Size(109, 29);
+            auto.Size = new Size(177, 46);
             auto.TabIndex = 7;
             auto.Text = "Automático";
             auto.UseVisualStyleBackColor = true;
@@ -147,19 +158,42 @@
             // 
             // datos
             // 
-            datos.Location = new Point(61, 278);
+            datos.Location = new Point(99, 445);
+            datos.Margin = new Padding(5);
             datos.Name = "datos";
-            datos.Size = new Size(109, 29);
+            datos.Size = new Size(177, 46);
             datos.TabIndex = 8;
             datos.Text = "Datos";
             datos.UseVisualStyleBackColor = true;
             datos.Click += datos_Click;
             // 
+            // labelAlarma
+            // 
+            labelAlarma.AutoSize = true;
+            labelAlarma.Font = new Font("Segoe UI", 12F);
+            labelAlarma.ForeColor = Color.Red;
+            labelAlarma.Location = new Point(1052, 0);
+            labelAlarma.Name = "labelAlarma";
+            labelAlarma.Size = new Size(0, 45);
+            labelAlarma.TabIndex = 9;
+            // 
+            // PrediccionConflicto
+            // 
+            PrediccionConflicto.Location = new Point(99, 551);
+            PrediccionConflicto.Name = "PrediccionConflicto";
+            PrediccionConflicto.Size = new Size(177, 89);
+            PrediccionConflicto.TabIndex = 10;
+            PrediccionConflicto.Text = "Predicción Conflicto";
+            PrediccionConflicto.UseVisualStyleBackColor = true;
+            PrediccionConflicto.Click += PrediccionConflicto_Click;
+            // 
             // SimulationForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1100, 756);
+            ClientSize = new Size(1788, 1210);
+            Controls.Add(PrediccionConflicto);
+            Controls.Add(labelAlarma);
             Controls.Add(datos);
             Controls.Add(auto);
             Controls.Add(label4);
@@ -168,6 +202,7 @@
             Controls.Add(label1);
             Controls.Add(Mover);
             Controls.Add(panelMap);
+            Margin = new Padding(5);
             Name = "SimulationForm";
             Text = "SimulationForm";
             Load += SimulationForm_Load;
@@ -191,5 +226,7 @@
         private Button auto;
         private System.Windows.Forms.Timer timer1;
         private Button datos;
+        private Label labelAlarma;
+        private Button PrediccionConflicto;
     }
 }
