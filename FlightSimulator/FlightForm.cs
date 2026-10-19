@@ -62,6 +62,13 @@ namespace FlightSimulator
                     return;
                 }
 
+                if (vel > 1000)
+                {
+                    MessageBox.Show("La velocidad no puede ser mayor que 1000.");
+                    return;
+                }
+
+
 
                 if (contadorVuelo == 1)
                 {

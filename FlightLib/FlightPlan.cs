@@ -142,8 +142,7 @@ namespace FlightLib
             double denominador = (dvx * dvx) + (dvy * dvy);
             double t = numerador / denominador;
 
-            if (t >= 0);
-            { 
+            
                 double x1t = x1 + vx1 * t;
                 double y1t = y1 + vy1 * t;
                 double x2t = x2 + vx2 * t;
@@ -155,7 +154,7 @@ namespace FlightLib
                     return true;
                 else
                     return false;
-            }
+            
         }
         public void EscribeConsola()
         // escribe en consola los datos del plan de vuelo
