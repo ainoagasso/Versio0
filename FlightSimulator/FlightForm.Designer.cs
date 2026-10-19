@@ -44,6 +44,8 @@
             txtFpx = new TextBox();
             txtFpy = new TextBox();
             lblTitulo = new Label();
+            botonauto = new Button();
+            bottonauto2 = new Button();
             SuspendLayout();
             // 
             // lblId
@@ -180,11 +182,33 @@
             lblTitulo.TabIndex = 15;
             lblTitulo.Text = "Vuelo 1";
             // 
+            // botonauto
+            // 
+            botonauto.Location = new Point(12, 385);
+            botonauto.Name = "botonauto";
+            botonauto.Size = new Size(126, 29);
+            botonauto.TabIndex = 16;
+            botonauto.Text = "Autorellenar";
+            botonauto.UseVisualStyleBackColor = true;
+            botonauto.Click += botonauto_Click;
+            // 
+            // bottonauto2
+            // 
+            bottonauto2.Location = new Point(701, 385);
+            bottonauto2.Name = "bottonauto2";
+            bottonauto2.Size = new Size(134, 29);
+            bottonauto2.TabIndex = 17;
+            bottonauto2.Text = "Autorellenar2";
+            bottonauto2.UseVisualStyleBackColor = true;
+            bottonauto2.Click += bottonauto2_Click;
+            // 
             // FlightForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(766, 450);
+            ClientSize = new Size(847, 450);
+            Controls.Add(bottonauto2);
+            Controls.Add(botonauto);
             Controls.Add(lblTitulo);
             Controls.Add(txtFpy);
             Controls.Add(txtFpx);
@@ -226,5 +250,7 @@
         private TextBox txtFpx;
         private TextBox txtFpy;
         private Label lblTitulo;
+        private Button botonauto;
+        private Button bottonauto2;
     }
 }

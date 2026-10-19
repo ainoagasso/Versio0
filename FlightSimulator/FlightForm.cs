@@ -99,5 +99,25 @@ namespace FlightSimulator
             txtId.Focus();
         }
 
+        private void botonauto_Click(object sender, EventArgs e)
+        {
+            txtId.Text = "VLG123";
+            txtVelocidad.Text = "150";
+            txtCpx.Text = "0";
+            txtCpy.Text = "0";
+            txtFpx.Text = "450";
+            txtFpy.Text = "500";
+
+        }
+
+        private void bottonauto2_Click(object sender, EventArgs e)
+        {
+            txtId.Text = "IB321";
+            txtVelocidad.Text = "230";
+            txtCpx.Text = "450";
+            txtCpy.Text = "0";
+            txtFpx.Text = "0";
+            txtFpy.Text = "500";
+        }
     }
 }
