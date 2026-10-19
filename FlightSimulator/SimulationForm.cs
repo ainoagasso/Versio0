@@ -241,6 +241,20 @@ namespace FlightSimulator
                 }
             }
         }
+
+        private void Reset_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+
+            plan1.SetCurrentPosition(plan1.GetInitialPosition());
+            plan2.SetCurrentPosition(plan2.GetInitialPosition());
+
+            pbAvion1.Location = new Point((int)plan1.GetInitialPosition().GetX(), (int)plan1.GetInitialPosition().GetY());
+            pbAvion2.Location = new Point((int)plan2.GetInitialPosition().GetX(), (int)plan2.GetInitialPosition().GetY());
+
+            panelMap.Invalidate();
+            panelMap.Update();
+        }
     }
 }
  

@@ -35,7 +35,7 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ButtonFace;
-            label1.Location = new Point(356, 167);
+            label1.Location = new Point(138, 169);
             label1.Name = "label1";
             label1.Size = new Size(70, 20);
             label1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(619, 450);
             Controls.Add(label1);
             Name = "DistanciaForm";
             Text = "DistanciaForm";
