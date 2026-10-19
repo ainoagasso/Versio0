@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimulationForm));
             panelMap = new Panel();
             pbAvion2 = new PictureBox();
             pbAvion1 = new PictureBox();
@@ -53,19 +54,21 @@
             panelMap.BackColor = SystemColors.ActiveBorder;
             panelMap.Controls.Add(pbAvion2);
             panelMap.Controls.Add(pbAvion1);
-            panelMap.Location = new Point(276, 31);
+            panelMap.Location = new Point(448, 50);
+            panelMap.Margin = new Padding(5, 5, 5, 5);
             panelMap.Name = "panelMap";
-            panelMap.Size = new Size(800, 700);
+            panelMap.Size = new Size(1300, 1120);
             panelMap.TabIndex = 0;
             panelMap.Paint += panelMap_Paint;
             // 
             // pbAvion2
             // 
             pbAvion2.BackColor = Color.Transparent;
-            pbAvion2.Image = Properties.Resources.plane;
-            pbAvion2.Location = new Point(372, 260);
+            pbAvion2.Image = (Image)resources.GetObject("pbAvion2.Image");
+            pbAvion2.Location = new Point(604, 416);
+            pbAvion2.Margin = new Padding(5, 5, 5, 5);
             pbAvion2.Name = "pbAvion2";
-            pbAvion2.Size = new Size(100, 62);
+            pbAvion2.Size = new Size(128, 128);
             pbAvion2.SizeMode = PictureBoxSizeMode.StretchImage;
             pbAvion2.TabIndex = 1;
             pbAvion2.TabStop = false;
@@ -74,10 +77,11 @@
             // pbAvion1
             // 
             pbAvion1.BackColor = Color.Transparent;
-            pbAvion1.Image = Properties.Resources.plane;
-            pbAvion1.Location = new Point(219, 96);
+            pbAvion1.Image = (Image)resources.GetObject("pbAvion1.Image");
+            pbAvion1.Location = new Point(356, 154);
+            pbAvion1.Margin = new Padding(5, 5, 5, 5);
             pbAvion1.Name = "pbAvion1";
-            pbAvion1.Size = new Size(100, 62);
+            pbAvion1.Size = new Size(128, 128);
             pbAvion1.SizeMode = PictureBoxSizeMode.StretchImage;
             pbAvion1.TabIndex = 0;
             pbAvion1.TabStop = false;
@@ -86,9 +90,10 @@
             // Mover
             // 
             Mover.BackColor = SystemColors.ControlLightLight;
-            Mover.Location = new Point(61, 170);
+            Mover.Location = new Point(99, 272);
+            Mover.Margin = new Padding(5, 5, 5, 5);
             Mover.Name = "Mover";
-            Mover.Size = new Size(109, 29);
+            Mover.Size = new Size(177, 46);
             Mover.TabIndex = 2;
             Mover.Text = "Mover";
             Mover.UseVisualStyleBackColor = false;
@@ -98,9 +103,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(244, 31);
+            label1.Location = new Point(396, 50);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(26, 31);
+            label1.Size = new Size(42, 50);
             label1.TabIndex = 3;
             label1.Text = "0";
             // 
@@ -108,9 +114,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(276, -3);
+            label2.Location = new Point(448, -5);
+            label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new Size(26, 31);
+            label2.Size = new Size(42, 50);
             label2.TabIndex = 4;
             label2.Text = "0";
             // 
@@ -118,9 +125,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(1026, -3);
+            label3.Location = new Point(1667, -5);
+            label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new Size(50, 31);
+            label3.Size = new Size(82, 50);
             label3.TabIndex = 5;
             label3.Text = "799";
             // 
@@ -128,17 +136,19 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(220, 700);
+            label4.Location = new Point(358, 1120);
+            label4.Margin = new Padding(5, 0, 5, 0);
             label4.Name = "label4";
-            label4.Size = new Size(50, 31);
+            label4.Size = new Size(82, 50);
             label4.TabIndex = 6;
             label4.Text = "699";
             // 
             // auto
             // 
-            auto.Location = new Point(61, 228);
+            auto.Location = new Point(99, 365);
+            auto.Margin = new Padding(5, 5, 5, 5);
             auto.Name = "auto";
-            auto.Size = new Size(109, 29);
+            auto.Size = new Size(177, 46);
             auto.TabIndex = 7;
             auto.Text = "Automático";
             auto.UseVisualStyleBackColor = true;
@@ -150,9 +160,10 @@
             // 
             // datos
             // 
-            datos.Location = new Point(61, 278);
+            datos.Location = new Point(99, 445);
+            datos.Margin = new Padding(5, 5, 5, 5);
             datos.Name = "datos";
-            datos.Size = new Size(109, 29);
+            datos.Size = new Size(177, 46);
             datos.TabIndex = 8;
             datos.Text = "Datos";
             datos.UseVisualStyleBackColor = true;
@@ -163,18 +174,16 @@
             labelAlarma.AutoSize = true;
             labelAlarma.Font = new Font("Segoe UI", 12F);
             labelAlarma.ForeColor = Color.Red;
-            labelAlarma.Location = new Point(647, 0);
-            labelAlarma.Margin = new Padding(2, 0, 2, 0);
+            labelAlarma.Location = new Point(1051, 0);
             labelAlarma.Name = "labelAlarma";
-            labelAlarma.Size = new Size(0, 28);
+            labelAlarma.Size = new Size(0, 45);
             labelAlarma.TabIndex = 9;
             // 
             // PrediccionConflicto
             // 
-            PrediccionConflicto.Location = new Point(61, 344);
-            PrediccionConflicto.Margin = new Padding(2);
+            PrediccionConflicto.Location = new Point(99, 550);
             PrediccionConflicto.Name = "PrediccionConflicto";
-            PrediccionConflicto.Size = new Size(109, 56);
+            PrediccionConflicto.Size = new Size(177, 90);
             PrediccionConflicto.TabIndex = 10;
             PrediccionConflicto.Text = "Predicción Conflicto";
             PrediccionConflicto.UseVisualStyleBackColor = true;
@@ -182,9 +191,10 @@
             // 
             // Reset
             // 
-            Reset.Location = new Point(61, 423);
+            Reset.Location = new Point(99, 677);
+            Reset.Margin = new Padding(5, 5, 5, 5);
             Reset.Name = "Reset";
-            Reset.Size = new Size(109, 29);
+            Reset.Size = new Size(177, 46);
             Reset.TabIndex = 11;
             Reset.Text = "Reset";
             Reset.UseVisualStyleBackColor = true;
@@ -192,9 +202,9 @@
             // 
             // SimulationForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1100, 734);
+            ClientSize = new Size(1788, 1174);
             Controls.Add(Reset);
             Controls.Add(PrediccionConflicto);
             Controls.Add(labelAlarma);
@@ -206,6 +216,7 @@
             Controls.Add(label1);
             Controls.Add(Mover);
             Controls.Add(panelMap);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "SimulationForm";
             Text = "SimulationForm";
             Load += SimulationForm_Load;
