@@ -47,6 +47,32 @@ namespace FlightSimulator
             //estableixo el color de fons dels PictureBox a transparent perquè més tard es vegin les elipses
             pbAvion1.BackColor = Color.Transparent;
             pbAvion2.BackColor = Color.Transparent;
+            // Mirem que hi hagi els plans de vol i comprovem si hi ha conflicte abans de començar la simulació
+            if (plan1 != null && plan2 != null)
+            {
+                if (plan1.PredecirConflicto(plan1, plan2, distanciaSeguridad))
+                {
+                    // Preguntem si volem resoldre el conflicte abans de començar la simulació
+                    if (MessageBox.Show("Els vols entraran en conflicte. ¿Vols resoldre el conflicte?", "Conflicte detectat", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        // Si diu que si augmentem la velocitat del vol 1 fins que no hi hagi conflicte
+                        while (plan1.PredecirConflicto(plan1, plan2, distanciaSeguridad) && plan1.GetVelocidad() < 1000)
+                        {
+                            plan1.SetVelocidad(plan1.GetVelocidad() + 10.0);
+                        }
+                        if (plan1.PredecirConflicto(plan1, plan2, distanciaSeguridad))
+                        {
+                            while (plan1.PredecirConflicto(plan1, plan2, distanciaSeguridad) && plan1.GetVelocidad() > 0)
+                            {
+                                plan1.SetVelocidad(plan1.GetVelocidad() - 10.0);
+                            }
+                        }
+
+                        MessageBox.Show("La velocitat del vol 1 s'ha ajustat a " + plan1.GetVelocidad() + " per evitar el conflicte.");
+                        // Si diu que no, ignora el codi i continua amb la simulació
+                    }
+                }
+            }
 
 
         }

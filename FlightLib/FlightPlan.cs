@@ -150,7 +150,7 @@ namespace FlightLib
 
                 double distanciaMinima = Math.Sqrt(Math.Pow((x2t - x1t), 2) + Math.Pow((y2t - y1t), 2));
 
-                if (distanciaMinima < distanciaSeguridad)
+                if (distanciaMinima < distanciaSeguridad * 2)
                     return true;
                 else
                     return false;
