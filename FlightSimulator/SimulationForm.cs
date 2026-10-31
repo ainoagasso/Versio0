@@ -34,13 +34,13 @@ namespace FlightSimulator
             timer1.Interval = 1000;
             if (plan1 != null)
             {
-                pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX(), (int)plan1.GetCurrentPosition().GetY());
+                pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX() - (pbAvion1.Width/2), (int)plan1.GetCurrentPosition().GetY() - (pbAvion1.Height/2));
                 pbAvion1.Tag = plan1;
             }
 
             if (plan2 != null)
             {
-                pbAvion2.Location = new Point((int)plan2.GetCurrentPosition().GetX(), (int)plan2.GetCurrentPosition().GetY());
+                pbAvion2.Location = new Point((int)plan2.GetCurrentPosition().GetX() - (pbAvion2.Width/2), (int)plan2.GetCurrentPosition().GetY() - (pbAvion2.Height/2));
                 pbAvion2.Tag = plan2;
             }
 
@@ -73,8 +73,8 @@ namespace FlightSimulator
                     }
                 }
             }
-
-
+            HeadingAvio (pbAvion1, plan1);
+            HeadingAvio (pbAvion2, plan2);
         }
 
         private void Mover_Click(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace FlightSimulator
             if (plan1 != null && !plan1.HasArrived())
             {
                 plan1.Move(tiempoCiclo);
-                pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX(), (int)plan1.GetCurrentPosition().GetY());
+                pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX() - (pbAvion1.Width/2), (int)plan1.GetCurrentPosition().GetY() - (pbAvion1.Height/2));
 
             }
 
@@ -91,7 +91,7 @@ namespace FlightSimulator
             if (plan2 != null && !plan2.HasArrived())
             {
                 plan2.Move(tiempoCiclo);
-                pbAvion2.Location = new Point((int)plan2.GetCurrentPosition().GetX(), (int)plan2.GetCurrentPosition().GetY());
+                pbAvion2.Location = new Point((int)plan2.GetCurrentPosition().GetX() - (pbAvion2.Width/2), (int)plan2.GetCurrentPosition().GetY() - (pbAvion2.Height/2));
 
             }
 
@@ -131,6 +131,9 @@ namespace FlightSimulator
                 //FASE 6: dibuixar la trajectòria dels vols
 
                 Graphics g = e.Graphics; //és l'objecte gràfic que ens permetrà dibuixar a la finestra
+
+                g.Clear(panelMap.BackColor); //netejo la finestra abans de dibuixar
+
                 Pen Trajectoria = new Pen(Color.Blue, 2); //creem un llapis de color blau i gruix 2 per fer la trajectòria dels vols
 
                 //Perquè el boli sàpiga on pintar, li passem les coordenades de la posició actual i de la posició final del vol 1
@@ -192,8 +195,12 @@ namespace FlightSimulator
             if (estado == 0)
             {
                 timer1.Start();
-                estado = 1;
+                estado = 1;          
                 auto.Text = "Parar";
+                              
+                panelMap.Invalidate();
+                panelMap.Update();
+               
             }
             else
             {
@@ -215,7 +222,6 @@ namespace FlightSimulator
                     labelAlarma.Text = "";
                 }
             }
-
             panelMap.Invalidate();
             panelMap.Update();
         }
@@ -226,16 +232,20 @@ namespace FlightSimulator
 
             {
                 plan1.Move(tiempoCiclo);
-                pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX(), (int)plan1.GetCurrentPosition().GetY());
+                pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX() - (pbAvion1.Width/2), (int)plan1.GetCurrentPosition().GetY() - (pbAvion1.Height/2));
                 pbAvion1.Tag = plan1;
             }
 
             if (plan2 != null)
             {
                 plan2.Move(tiempoCiclo);
-                pbAvion2.Location = new Point((int)plan2.GetCurrentPosition().GetX(), (int)plan2.GetCurrentPosition().GetY());
+                pbAvion2.Location = new Point((int)plan2.GetCurrentPosition().GetX() - (pbAvion2.Width/2), (int)plan2.GetCurrentPosition().GetY() - (pbAvion2.Height/2));
                 pbAvion2.Tag = plan2;
             }
+
+            panelMap.Invalidate();
+            panelMap.Update();
+
             bool todosHanLlegado = (plan1 == null || plan1.HasArrived()) && (plan2 == null || plan2.HasArrived());
             if (todosHanLlegado)
             {
@@ -275,11 +285,41 @@ namespace FlightSimulator
             plan1.SetCurrentPosition(plan1.GetInitialPosition());
             plan2.SetCurrentPosition(plan2.GetInitialPosition());
 
-            pbAvion1.Location = new Point((int)plan1.GetInitialPosition().GetX(), (int)plan1.GetInitialPosition().GetY());
-            pbAvion2.Location = new Point((int)plan2.GetInitialPosition().GetX(), (int)plan2.GetInitialPosition().GetY());
+            pbAvion1.Location = new Point((int)plan1.GetInitialPosition().GetX() - (pbAvion1.Width/2), (int)plan1.GetInitialPosition().GetY() - (pbAvion1.Height/2));
+            pbAvion2.Location = new Point((int)plan2.GetInitialPosition().GetX() - (pbAvion2.Width/2), (int)plan2.GetInitialPosition().GetY() - (pbAvion2.Height/2));
 
             panelMap.Invalidate();
             panelMap.Update();
+        }
+
+        private void HeadingAvio(PictureBox pb, FlightPlan plan)
+        {
+            if (pb.Image == null || plan == null) return;
+            Image imatgeplane = pb.Image; //és la imatge original de l'avió que hi ha al PictureBox
+
+            //Calculo la direcció de l'avió a partir de la posició inicial i final
+            double dx = plan.GetFinalPosition().GetX() - plan.GetInitialPosition().GetX();
+            double dy = plan.GetFinalPosition().GetY() - plan.GetInitialPosition().GetY();
+
+            //Calculo l'angle de rotació a partir de la direcció
+            double heading = Math.Atan2(dy, dx) * (180 / Math.PI); //el 180/Math.PI és per convertir de radians a graus
+
+            pb.Image = RotarAvio(imatgeplane, (float)heading);
+        }
+
+        private Image RotarAvio (Image imgplane, float heading)
+        {
+            
+            Bitmap bmp = new Bitmap(imgplane.Width, imgplane.Height); //creem un bitmap amb les mateixes dimensions que la imatge original
+            
+            using (Graphics g = Graphics.FromImage(bmp)) //creem un objecte gràfic a partir del bitmap
+            {
+                g.TranslateTransform((float)imgplane.Width / 2, (float)imgplane.Height / 2); //Movem el punt d'origen al centre de la imatge
+                g.RotateTransform(heading); //girem la imatge segons l'angle de rotació
+                g.TranslateTransform(-(float)imgplane.Width / 2, -(float)imgplane.Height / 2); //Tornem a moure el punt d'origen a la cantonada superior esquerra
+                g.DrawImage(imgplane, new Point(0, 0)); //Dibuixem la imatge original al bitmap amb les transformacions aplicades
+            }
+            return bmp;
         }
     }
 }

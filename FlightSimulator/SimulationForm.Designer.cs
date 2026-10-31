@@ -55,7 +55,7 @@
             panelMap.Controls.Add(pbAvion2);
             panelMap.Controls.Add(pbAvion1);
             panelMap.Location = new Point(448, 50);
-            panelMap.Margin = new Padding(5, 5, 5, 5);
+            panelMap.Margin = new Padding(5);
             panelMap.Name = "panelMap";
             panelMap.Size = new Size(1300, 1120);
             panelMap.TabIndex = 0;
@@ -66,10 +66,10 @@
             pbAvion2.BackColor = Color.Transparent;
             pbAvion2.Image = (Image)resources.GetObject("pbAvion2.Image");
             pbAvion2.Location = new Point(604, 416);
-            pbAvion2.Margin = new Padding(5, 5, 5, 5);
+            pbAvion2.Margin = new Padding(5);
             pbAvion2.Name = "pbAvion2";
-            pbAvion2.Size = new Size(128, 128);
-            pbAvion2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbAvion2.Size = new Size(150, 150);
+            pbAvion2.SizeMode = PictureBoxSizeMode.Zoom;
             pbAvion2.TabIndex = 1;
             pbAvion2.TabStop = false;
             pbAvion2.Click += pbAvion2_Click;
@@ -79,10 +79,10 @@
             pbAvion1.BackColor = Color.Transparent;
             pbAvion1.Image = (Image)resources.GetObject("pbAvion1.Image");
             pbAvion1.Location = new Point(356, 154);
-            pbAvion1.Margin = new Padding(5, 5, 5, 5);
+            pbAvion1.Margin = new Padding(5);
             pbAvion1.Name = "pbAvion1";
-            pbAvion1.Size = new Size(128, 128);
-            pbAvion1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbAvion1.Size = new Size(150, 150);
+            pbAvion1.SizeMode = PictureBoxSizeMode.Zoom;
             pbAvion1.TabIndex = 0;
             pbAvion1.TabStop = false;
             pbAvion1.Click += pbAvion1_Click;
@@ -91,7 +91,7 @@
             // 
             Mover.BackColor = SystemColors.ControlLightLight;
             Mover.Location = new Point(99, 272);
-            Mover.Margin = new Padding(5, 5, 5, 5);
+            Mover.Margin = new Padding(5);
             Mover.Name = "Mover";
             Mover.Size = new Size(177, 46);
             Mover.TabIndex = 2;
@@ -146,7 +146,7 @@
             // auto
             // 
             auto.Location = new Point(99, 365);
-            auto.Margin = new Padding(5, 5, 5, 5);
+            auto.Margin = new Padding(5);
             auto.Name = "auto";
             auto.Size = new Size(177, 46);
             auto.TabIndex = 7;
@@ -161,7 +161,7 @@
             // datos
             // 
             datos.Location = new Point(99, 445);
-            datos.Margin = new Padding(5, 5, 5, 5);
+            datos.Margin = new Padding(5);
             datos.Name = "datos";
             datos.Size = new Size(177, 46);
             datos.TabIndex = 8;
@@ -192,7 +192,7 @@
             // Reset
             // 
             Reset.Location = new Point(99, 677);
-            Reset.Margin = new Padding(5, 5, 5, 5);
+            Reset.Margin = new Padding(5);
             Reset.Name = "Reset";
             Reset.Size = new Size(177, 46);
             Reset.TabIndex = 11;
@@ -216,7 +216,7 @@
             Controls.Add(label1);
             Controls.Add(Mover);
             Controls.Add(panelMap);
-            Margin = new Padding(5, 5, 5, 5);
+            Margin = new Padding(5);
             Name = "SimulationForm";
             Text = "SimulationForm";
             Load += SimulationForm_Load;
