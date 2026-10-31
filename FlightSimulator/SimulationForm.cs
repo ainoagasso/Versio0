@@ -321,8 +321,7 @@ namespace FlightSimulator
             double heading = Math.Atan2(dy, dx) * (180 / Math.PI); //el 180/Math.PI és per convertir de radians a graus
 
             pb.Image = RotarAvio(imatgeplane, (float)heading);
-            pbAvion1.SizeMode = PictureBoxSizeMode.AutoSize;
-            pbAvion2.SizeMode = PictureBoxSizeMode.AutoSize;
+           
         }
 
         private Image RotarAvio(Image imgplane, float heading)
