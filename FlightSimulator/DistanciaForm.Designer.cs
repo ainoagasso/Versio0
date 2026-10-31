@@ -46,7 +46,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(619, 450);
+            ClientSize = new Size(619, 305);
             Controls.Add(label1);
             Name = "DistanciaForm";
             Text = "DistanciaForm";

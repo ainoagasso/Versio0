@@ -34,13 +34,13 @@ namespace FlightSimulator
             timer1.Interval = 1000;
             if (plan1 != null)
             {
-                pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX() - (pbAvion1.Width/2), (int)plan1.GetCurrentPosition().GetY() - (pbAvion1.Height/2));
+                pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX() - (pbAvion1.Width / 2), (int)plan1.GetCurrentPosition().GetY() - (pbAvion1.Height / 2));
                 pbAvion1.Tag = plan1;
             }
 
             if (plan2 != null)
             {
-                pbAvion2.Location = new Point((int)plan2.GetCurrentPosition().GetX() - (pbAvion2.Width/2), (int)plan2.GetCurrentPosition().GetY() - (pbAvion2.Height/2));
+                pbAvion2.Location = new Point((int)plan2.GetCurrentPosition().GetX() - (pbAvion2.Width / 2), (int)plan2.GetCurrentPosition().GetY() - (pbAvion2.Height / 2));
                 pbAvion2.Tag = plan2;
             }
 
@@ -73,8 +73,9 @@ namespace FlightSimulator
                     }
                 }
             }
-            HeadingAvio (pbAvion1, plan1);
-            HeadingAvio (pbAvion2, plan2);
+            HeadingAvio(pbAvion1, plan1);
+            HeadingAvio(pbAvion2, plan2);
+            ComprobarAlarmaConflicto();
         }
 
         private void Mover_Click(object sender, EventArgs e)
@@ -83,7 +84,7 @@ namespace FlightSimulator
             if (plan1 != null && !plan1.HasArrived())
             {
                 plan1.Move(tiempoCiclo);
-                pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX() - (pbAvion1.Width/2), (int)plan1.GetCurrentPosition().GetY() - (pbAvion1.Height/2));
+                pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX() - (pbAvion1.Width / 2), (int)plan1.GetCurrentPosition().GetY() - (pbAvion1.Height / 2));
 
             }
 
@@ -91,7 +92,7 @@ namespace FlightSimulator
             if (plan2 != null && !plan2.HasArrived())
             {
                 plan2.Move(tiempoCiclo);
-                pbAvion2.Location = new Point((int)plan2.GetCurrentPosition().GetX() - (pbAvion2.Width/2), (int)plan2.GetCurrentPosition().GetY() - (pbAvion2.Height/2));
+                pbAvion2.Location = new Point((int)plan2.GetCurrentPosition().GetX() - (pbAvion2.Width / 2), (int)plan2.GetCurrentPosition().GetY() - (pbAvion2.Height / 2));
 
             }
 
@@ -131,6 +132,8 @@ namespace FlightSimulator
                 //FASE 6: dibuixar la trajectòria dels vols
 
                 Graphics g = e.Graphics; //és l'objecte gràfic que ens permetrà dibuixar a la finestra
+
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias; //suavitzar lineas
 
                 g.Clear(panelMap.BackColor); //netejo la finestra abans de dibuixar
 
@@ -188,6 +191,11 @@ namespace FlightSimulator
 
                 Trajectoria.Dispose();
                 elipseSeguretat.Dispose();
+
+                
+                Font fuenteTexto = new Font("Segoe UI", 9, FontStyle.Bold);
+                g.DrawString("Vuelo 1", fuenteTexto, Brushes.Black, x1 - 20, y1 - radi - 15);
+                g.DrawString("Vuelo 2", fuenteTexto, Brushes.Black, x2 - 20, y2 - radi - 15);
             }
         }
         private void auto_Click(object sender, EventArgs e)
@@ -195,12 +203,12 @@ namespace FlightSimulator
             if (estado == 0)
             {
                 timer1.Start();
-                estado = 1;          
+                estado = 1;
                 auto.Text = "Parar";
-                              
+
                 panelMap.Invalidate();
                 panelMap.Update();
-               
+
             }
             else
             {
@@ -232,17 +240,18 @@ namespace FlightSimulator
 
             {
                 plan1.Move(tiempoCiclo);
-                pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX() - (pbAvion1.Width/2), (int)plan1.GetCurrentPosition().GetY() - (pbAvion1.Height/2));
+                pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX() - (pbAvion1.Width / 2), (int)plan1.GetCurrentPosition().GetY() - (pbAvion1.Height / 2));
                 pbAvion1.Tag = plan1;
             }
 
             if (plan2 != null)
             {
                 plan2.Move(tiempoCiclo);
-                pbAvion2.Location = new Point((int)plan2.GetCurrentPosition().GetX() - (pbAvion2.Width/2), (int)plan2.GetCurrentPosition().GetY() - (pbAvion2.Height/2));
+                pbAvion2.Location = new Point((int)plan2.GetCurrentPosition().GetX() - (pbAvion2.Width / 2), (int)plan2.GetCurrentPosition().GetY() - (pbAvion2.Height / 2));
                 pbAvion2.Tag = plan2;
             }
 
+            ComprobarAlarmaConflicto();
             panelMap.Invalidate();
             panelMap.Update();
 
@@ -281,12 +290,19 @@ namespace FlightSimulator
         private void Reset_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            estado = 0;
+            auto.Text = "Automático";
 
             plan1.SetCurrentPosition(plan1.GetInitialPosition());
             plan2.SetCurrentPosition(plan2.GetInitialPosition());
 
-            pbAvion1.Location = new Point((int)plan1.GetInitialPosition().GetX() - (pbAvion1.Width/2), (int)plan1.GetInitialPosition().GetY() - (pbAvion1.Height/2));
-            pbAvion2.Location = new Point((int)plan2.GetInitialPosition().GetX() - (pbAvion2.Width/2), (int)plan2.GetInitialPosition().GetY() - (pbAvion2.Height/2));
+            pbAvion1.Location = new Point((int)plan1.GetInitialPosition().GetX() - (pbAvion1.Width / 2), (int)plan1.GetInitialPosition().GetY() - (pbAvion1.Height / 2));
+            pbAvion2.Location = new Point((int)plan2.GetInitialPosition().GetX() - (pbAvion2.Width / 2), (int)plan2.GetInitialPosition().GetY() - (pbAvion2.Height / 2));
+
+            HeadingAvio(pbAvion1, plan1);
+            HeadingAvio(pbAvion2, plan2);
+            
+            ComprobarAlarmaConflicto();
 
             panelMap.Invalidate();
             panelMap.Update();
@@ -305,21 +321,76 @@ namespace FlightSimulator
             double heading = Math.Atan2(dy, dx) * (180 / Math.PI); //el 180/Math.PI és per convertir de radians a graus
 
             pb.Image = RotarAvio(imatgeplane, (float)heading);
+            pbAvion1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pbAvion2.SizeMode = PictureBoxSizeMode.AutoSize;
         }
 
-        private Image RotarAvio (Image imgplane, float heading)
+        private Image RotarAvio(Image imgplane, float heading)
         {
-            
-            Bitmap bmp = new Bitmap(imgplane.Width, imgplane.Height); //creem un bitmap amb les mateixes dimensions que la imatge original
-            
+            double rad = heading * Math.PI / 180.0;
+            double cos = Math.Abs(Math.Cos(rad));
+            double sin = Math.Abs(Math.Sin(rad));
+
+            //per no tallar les cantonades
+            int newWidth = (int)Math.Ceiling(imgplane.Width * cos + imgplane.Height * sin); //math ceiling es per arrodonir
+            int newHeight = (int)Math.Ceiling(imgplane.Width * sin + imgplane.Height * cos);
+
+            Bitmap bmp = new Bitmap(newWidth,newHeight); //creem un bitmap una mica més gran que la imatge original
+
             using (Graphics g = Graphics.FromImage(bmp)) //creem un objecte gràfic a partir del bitmap
             {
-                g.TranslateTransform((float)imgplane.Width / 2, (float)imgplane.Height / 2); //Movem el punt d'origen al centre de la imatge
+                //activar les propietats de qualitat per a la rotació (que no surti pixelat)
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                g.TranslateTransform(newWidth / 2f, newHeight / 2f); //Movem el punt d'origen al centre de la imatge
                 g.RotateTransform(heading); //girem la imatge segons l'angle de rotació
-                g.TranslateTransform(-(float)imgplane.Width / 2, -(float)imgplane.Height / 2); //Tornem a moure el punt d'origen a la cantonada superior esquerra
-                g.DrawImage(imgplane, new Point(0, 0)); //Dibuixem la imatge original al bitmap amb les transformacions aplicades
+              
+                g.DrawImage(imgplane, -imgplane.Width / 2f, -imgplane.Height / 2f); //Dibuixem la imatge original centrada al bitmap amb les transformacions aplicades
             }
             return bmp;
+        }
+
+
+
+        private void numVelocidad1_ValueChanged(object sender, EventArgs e)
+        {
+            if (plan1 != null)
+            {
+                plan1.SetVelocidad((double)numVelocidad1.Value);
+                ComprobarAlarmaConflicto();
+            }
+        }
+
+        private void numVelocidad2_ValueChanged(object sender, EventArgs e)
+        {
+            if (plan2 != null)
+            {
+                plan2.SetVelocidad((double)numVelocidad2.Value);
+                ComprobarAlarmaConflicto();
+            }
+        }
+
+        private void panelMap_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblCoordenadas.Text = $"Coordenadas: ({e.X}, {e.Y})";
+        }
+
+        private void ComprobarAlarmaConflicto()
+        {
+            if (plan1 != null && plan2 != null)
+            {
+                bool conflicto = plan1.Conflicto(plan2, distanciaSeguridad);
+                if (conflicto)
+                {
+                    lblEstadoAlarma.Text = "ALERTA: Conflicto detectado entre vuelos";
+                    lblEstadoAlarma.ForeColor = Color.Red;
+                }
+                else
+                {
+                    lblEstadoAlarma.Text = "Sin conflictos";
+                    lblEstadoAlarma.ForeColor = Color.DarkGreen;
+                }
+            }
         }
     }
 }

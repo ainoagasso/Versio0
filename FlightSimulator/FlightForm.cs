@@ -126,5 +126,7 @@ namespace FlightSimulator
             txtFpx.Text = "0";
             txtFpy.Text = "500";
         }
+
+       
     }
 }

@@ -44,31 +44,44 @@
             labelAlarma = new Label();
             PrediccionConflicto = new Button();
             Reset = new Button();
+            numVelocidad1 = new NumericUpDown();
+            numVelocidad2 = new NumericUpDown();
+            label5 = new Label();
+            groupBox1 = new GroupBox();
+            label6 = new Label();
+            label7 = new Label();
+            statusStrip1 = new StatusStrip();
+            lblCoordenadas = new ToolStripStatusLabel();
+            lblEstadoAlarma = new ToolStripStatusLabel();
             panelMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbAvion2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAvion1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numVelocidad1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numVelocidad2).BeginInit();
+            groupBox1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // panelMap
             // 
-            panelMap.BackColor = SystemColors.ActiveBorder;
+            panelMap.BackColor = Color.LightSteelBlue;
+            panelMap.BorderStyle = BorderStyle.FixedSingle;
             panelMap.Controls.Add(pbAvion2);
             panelMap.Controls.Add(pbAvion1);
-            panelMap.Location = new Point(448, 50);
-            panelMap.Margin = new Padding(5);
+            panelMap.Location = new Point(276, 31);
             panelMap.Name = "panelMap";
-            panelMap.Size = new Size(1300, 1120);
+            panelMap.Size = new Size(800, 700);
             panelMap.TabIndex = 0;
             panelMap.Paint += panelMap_Paint;
+            panelMap.MouseMove += panelMap_MouseMove;
             // 
             // pbAvion2
             // 
             pbAvion2.BackColor = Color.Transparent;
             pbAvion2.Image = (Image)resources.GetObject("pbAvion2.Image");
-            pbAvion2.Location = new Point(604, 416);
-            pbAvion2.Margin = new Padding(5);
+            pbAvion2.Location = new Point(372, 260);
             pbAvion2.Name = "pbAvion2";
-            pbAvion2.Size = new Size(150, 150);
+            pbAvion2.Size = new Size(92, 94);
             pbAvion2.SizeMode = PictureBoxSizeMode.Zoom;
             pbAvion2.TabIndex = 1;
             pbAvion2.TabStop = false;
@@ -78,10 +91,9 @@
             // 
             pbAvion1.BackColor = Color.Transparent;
             pbAvion1.Image = (Image)resources.GetObject("pbAvion1.Image");
-            pbAvion1.Location = new Point(356, 154);
-            pbAvion1.Margin = new Padding(5);
+            pbAvion1.Location = new Point(219, 96);
             pbAvion1.Name = "pbAvion1";
-            pbAvion1.Size = new Size(150, 150);
+            pbAvion1.Size = new Size(92, 94);
             pbAvion1.SizeMode = PictureBoxSizeMode.Zoom;
             pbAvion1.TabIndex = 0;
             pbAvion1.TabStop = false;
@@ -89,11 +101,11 @@
             // 
             // Mover
             // 
-            Mover.BackColor = SystemColors.ControlLightLight;
-            Mover.Location = new Point(99, 272);
-            Mover.Margin = new Padding(5);
+            Mover.BackColor = SystemColors.Control;
+            Mover.FlatStyle = FlatStyle.Popup;
+            Mover.Location = new Point(6, 26);
             Mover.Name = "Mover";
-            Mover.Size = new Size(177, 46);
+            Mover.Size = new Size(109, 29);
             Mover.TabIndex = 2;
             Mover.Text = "Mover";
             Mover.UseVisualStyleBackColor = false;
@@ -103,10 +115,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(396, 50);
-            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Location = new Point(244, 31);
             label1.Name = "label1";
-            label1.Size = new Size(42, 50);
+            label1.Size = new Size(26, 31);
             label1.TabIndex = 3;
             label1.Text = "0";
             // 
@@ -114,10 +125,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(448, -5);
-            label2.Margin = new Padding(5, 0, 5, 0);
+            label2.Location = new Point(276, -3);
             label2.Name = "label2";
-            label2.Size = new Size(42, 50);
+            label2.Size = new Size(26, 31);
             label2.TabIndex = 4;
             label2.Text = "0";
             // 
@@ -125,10 +135,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(1667, -5);
-            label3.Margin = new Padding(5, 0, 5, 0);
+            label3.Location = new Point(1026, -3);
             label3.Name = "label3";
-            label3.Size = new Size(82, 50);
+            label3.Size = new Size(50, 31);
             label3.TabIndex = 5;
             label3.Text = "799";
             // 
@@ -136,19 +145,18 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(358, 1120);
-            label4.Margin = new Padding(5, 0, 5, 0);
+            label4.Location = new Point(220, 700);
             label4.Name = "label4";
-            label4.Size = new Size(82, 50);
+            label4.Size = new Size(50, 31);
             label4.TabIndex = 6;
             label4.Text = "699";
             // 
             // auto
             // 
-            auto.Location = new Point(99, 365);
-            auto.Margin = new Padding(5);
+            auto.FlatStyle = FlatStyle.Popup;
+            auto.Location = new Point(6, 61);
             auto.Name = "auto";
-            auto.Size = new Size(177, 46);
+            auto.Size = new Size(109, 29);
             auto.TabIndex = 7;
             auto.Text = "Automático";
             auto.UseVisualStyleBackColor = true;
@@ -160,10 +168,10 @@
             // 
             // datos
             // 
-            datos.Location = new Point(99, 445);
-            datos.Margin = new Padding(5);
+            datos.FlatStyle = FlatStyle.Popup;
+            datos.Location = new Point(6, 96);
             datos.Name = "datos";
-            datos.Size = new Size(177, 46);
+            datos.Size = new Size(109, 29);
             datos.TabIndex = 8;
             datos.Text = "Datos";
             datos.UseVisualStyleBackColor = true;
@@ -174,16 +182,19 @@
             labelAlarma.AutoSize = true;
             labelAlarma.Font = new Font("Segoe UI", 12F);
             labelAlarma.ForeColor = Color.Red;
-            labelAlarma.Location = new Point(1051, 0);
+            labelAlarma.Location = new Point(647, 0);
+            labelAlarma.Margin = new Padding(2, 0, 2, 0);
             labelAlarma.Name = "labelAlarma";
-            labelAlarma.Size = new Size(0, 45);
+            labelAlarma.Size = new Size(0, 28);
             labelAlarma.TabIndex = 9;
             // 
             // PrediccionConflicto
             // 
-            PrediccionConflicto.Location = new Point(99, 550);
+            PrediccionConflicto.FlatStyle = FlatStyle.Popup;
+            PrediccionConflicto.Location = new Point(120, 26);
+            PrediccionConflicto.Margin = new Padding(2);
             PrediccionConflicto.Name = "PrediccionConflicto";
-            PrediccionConflicto.Size = new Size(177, 90);
+            PrediccionConflicto.Size = new Size(109, 56);
             PrediccionConflicto.TabIndex = 10;
             PrediccionConflicto.Text = "Predicción Conflicto";
             PrediccionConflicto.UseVisualStyleBackColor = true;
@@ -191,38 +202,124 @@
             // 
             // Reset
             // 
-            Reset.Location = new Point(99, 677);
-            Reset.Margin = new Padding(5);
+            Reset.BackColor = SystemColors.Control;
+            Reset.FlatStyle = FlatStyle.Popup;
+            Reset.Location = new Point(61, 342);
             Reset.Name = "Reset";
-            Reset.Size = new Size(177, 46);
+            Reset.Size = new Size(109, 29);
             Reset.TabIndex = 11;
             Reset.Text = "Reset";
-            Reset.UseVisualStyleBackColor = true;
+            Reset.UseVisualStyleBackColor = false;
             Reset.Click += Reset_Click;
+            // 
+            // numVelocidad1
+            // 
+            numVelocidad1.Location = new Point(86, 276);
+            numVelocidad1.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numVelocidad1.Name = "numVelocidad1";
+            numVelocidad1.Size = new Size(135, 27);
+            numVelocidad1.TabIndex = 13;
+            numVelocidad1.ValueChanged += numVelocidad1_ValueChanged;
+            // 
+            // numVelocidad2
+            // 
+            numVelocidad2.Location = new Point(86, 309);
+            numVelocidad2.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numVelocidad2.Name = "numVelocidad2";
+            numVelocidad2.Size = new Size(135, 27);
+            numVelocidad2.TabIndex = 14;
+            numVelocidad2.ValueChanged += numVelocidad2_ValueChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(18, 242);
+            label5.Name = "label5";
+            label5.Size = new Size(152, 20);
+            label5.TabIndex = 15;
+            label5.Text = "Cambiar Velocidades:";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(Mover);
+            groupBox1.Controls.Add(auto);
+            groupBox1.Controls.Add(datos);
+            groupBox1.Controls.Add(PrediccionConflicto);
+            groupBox1.Location = new Point(12, 65);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(250, 156);
+            groupBox1.TabIndex = 16;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Controles";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(18, 276);
+            label6.Name = "label6";
+            label6.Size = new Size(62, 20);
+            label6.TabIndex = 17;
+            label6.Text = "Vuelo 1:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(18, 309);
+            label7.Name = "label7";
+            label7.Size = new Size(62, 20);
+            label7.TabIndex = 18;
+            label7.Text = "Vuelo 2:";
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(20, 20);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { lblCoordenadas, lblEstadoAlarma });
+            statusStrip1.Location = new Point(0, 744);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(1111, 22);
+            statusStrip1.TabIndex = 19;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // lblCoordenadas
+            // 
+            lblCoordenadas.Name = "lblCoordenadas";
+            lblCoordenadas.Size = new Size(0, 16);
+            // 
+            // lblEstadoAlarma
+            // 
+            lblEstadoAlarma.Name = "lblEstadoAlarma";
+            lblEstadoAlarma.Size = new Size(0, 16);
             // 
             // SimulationForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1788, 1174);
+            ClientSize = new Size(1111, 766);
+            Controls.Add(statusStrip1);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(groupBox1);
+            Controls.Add(label5);
+            Controls.Add(numVelocidad2);
+            Controls.Add(numVelocidad1);
             Controls.Add(Reset);
-            Controls.Add(PrediccionConflicto);
             Controls.Add(labelAlarma);
-            Controls.Add(datos);
-            Controls.Add(auto);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(Mover);
             Controls.Add(panelMap);
-            Margin = new Padding(5);
             Name = "SimulationForm";
             Text = "SimulationForm";
             Load += SimulationForm_Load;
             panelMap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbAvion2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAvion1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numVelocidad1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numVelocidad2).EndInit();
+            groupBox1.ResumeLayout(false);
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -243,5 +340,14 @@
         private Label labelAlarma;
         private Button PrediccionConflicto;
         private Button Reset;
+        private NumericUpDown numVelocidad1;
+        private NumericUpDown numVelocidad2;
+        private Label label5;
+        private GroupBox groupBox1;
+        private Label label6;
+        private Label label7;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel lblCoordenadas;
+        private ToolStripStatusLabel lblEstadoAlarma;
     }
 }
