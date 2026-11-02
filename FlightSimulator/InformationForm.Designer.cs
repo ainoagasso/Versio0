@@ -33,58 +33,63 @@
             lblCurrentPosition = new Label();
             lblFinalPosition = new Label();
             lblVelocidad = new Label();
+            lblCompany = new Label();
             SuspendLayout();
             // 
             // lblId
             // 
-            lblId.AutoSize = true;
             lblId.BorderStyle = BorderStyle.FixedSingle;
             lblId.Location = new Point(93, 115);
             lblId.Name = "lblId";
-            lblId.Size = new Size(2, 22);
+            lblId.Size = new Size(363, 22);
             lblId.TabIndex = 0;
             // 
             // lblInitialPosition
             // 
-            lblInitialPosition.AutoSize = true;
             lblInitialPosition.BorderStyle = BorderStyle.FixedSingle;
             lblInitialPosition.Location = new Point(93, 173);
             lblInitialPosition.Name = "lblInitialPosition";
-            lblInitialPosition.Size = new Size(2, 22);
+            lblInitialPosition.Size = new Size(363, 22);
             lblInitialPosition.TabIndex = 1;
             // 
             // lblCurrentPosition
             // 
-            lblCurrentPosition.AutoSize = true;
             lblCurrentPosition.BorderStyle = BorderStyle.FixedSingle;
             lblCurrentPosition.Location = new Point(93, 221);
             lblCurrentPosition.Name = "lblCurrentPosition";
-            lblCurrentPosition.Size = new Size(2, 22);
+            lblCurrentPosition.Size = new Size(363, 22);
             lblCurrentPosition.TabIndex = 2;
             // 
             // lblFinalPosition
             // 
-            lblFinalPosition.AutoSize = true;
             lblFinalPosition.BorderStyle = BorderStyle.FixedSingle;
             lblFinalPosition.Location = new Point(93, 274);
             lblFinalPosition.Name = "lblFinalPosition";
-            lblFinalPosition.Size = new Size(2, 22);
+            lblFinalPosition.Size = new Size(363, 22);
             lblFinalPosition.TabIndex = 3;
             // 
             // lblVelocidad
             // 
-            lblVelocidad.AutoSize = true;
             lblVelocidad.BorderStyle = BorderStyle.FixedSingle;
             lblVelocidad.Location = new Point(93, 328);
             lblVelocidad.Name = "lblVelocidad";
-            lblVelocidad.Size = new Size(2, 22);
+            lblVelocidad.Size = new Size(363, 22);
             lblVelocidad.TabIndex = 4;
+            // 
+            // lblCompany
+            // 
+            lblCompany.BorderStyle = BorderStyle.FixedSingle;
+            lblCompany.Location = new Point(93, 381);
+            lblCompany.Name = "lblCompany";
+            lblCompany.Size = new Size(363, 20);
+            lblCompany.TabIndex = 5;
             // 
             // InformationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(373, 517);
+            ClientSize = new Size(763, 517);
+            Controls.Add(lblCompany);
             Controls.Add(lblVelocidad);
             Controls.Add(lblFinalPosition);
             Controls.Add(lblCurrentPosition);
@@ -94,7 +99,6 @@
             Text = "InformationForm";
             Load += InformationForm_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -104,5 +108,6 @@
         private Label lblCurrentPosition;
         private Label lblFinalPosition;
         private Label lblVelocidad;
+        private Label lblCompany;
     }
 }

@@ -73,6 +73,10 @@ namespace FlightSimulator
                     }
                 }
             }
+
+            numVelocidad1.Value = (decimal)plan1.GetVelocidad();
+            numVelocidad2.Value = (decimal)plan2.GetVelocidad();
+
             HeadingAvio(pbAvion1, plan1);
             HeadingAvio(pbAvion2, plan2);
             ComprobarAlarmaConflicto();

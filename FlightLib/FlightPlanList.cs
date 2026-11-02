@@ -8,36 +8,30 @@ namespace FlightLib
 {
     public class FlightPlanList
     {
-        FlightPlan[] vector = new FlightPlan[10];
-        int number = 0;
+        List<FlightPlan> vuelos = new List<FlightPlan>();
 
         public int DameNum()
         {
-            return this.number;
+            return this.vuelos.Count;
         }
 
         public int AddFlightPlan(FlightPlan p)
         {
-            if (number == 10)
+           
             {
-                return -1;
-            }
-            else
-            {
-                vector[number] = p;
-                number++;
+                vuelos.Add(p);
                 return 0;
             }
         }
         public FlightPlan GetFlightPlan(int i)
         {
-            if (i < 0 || i >= number)
+            if (i < 0 || i >= this.vuelos.Count)
             {
                 return null;
             }
             else
             {
-                return vector[i];
+                return vuelos[i];
             }
         }
 
@@ -45,19 +39,30 @@ namespace FlightLib
         public void Move (double tiempo)
         {
             int i = 0;
-            while (i<number)
+            while (i< this.vuelos.Count)
             {
-                vector[i].Move(tiempo);
+                vuelos[i].Move(tiempo);
+                i++;
+            }
+        }
+        // devuelve los vuelos a su posición inicial , para poder volver a simularlos
+        public void Restart()
+        {
+            int i = 0;
+            while (i < this.vuelos.Count)
+            {
+                vuelos[i].Restart();
                 i++;
             }
         }
 
+
         public void EscribeConsola()
         {
             int i = 0;
-            while (i < number)
+            while (i < this.vuelos.Count)
             {
-                vector[i].EscribeConsola();
+                vuelos[i].EscribeConsola();
                 i++;
             }
         }

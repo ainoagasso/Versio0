@@ -12,13 +12,14 @@ namespace FlightLib
         // Atributos
 
         string id; // identificador
+        string company; // compañia
         Position initialPosition; // posicion inicial
         Position currentPosition; // posicion actual
         Position finalPosition; // posicion final
         double velocidad;
 
         // Constructures
-        public FlightPlan(string id, double cpx, double cpy, double fpx, double fpy, double velocidad)
+        public FlightPlan(string id, string company , double cpx, double cpy, double fpx, double fpy, double velocidad)
         {
             this.id = id;
             this.initialPosition= new Position(cpx, cpy);
@@ -34,6 +35,11 @@ namespace FlightLib
         { return this.id; }
         public void SetId(string id)
         { this.id = id; }
+
+        public string GetCompany()
+        { return this.company; }
+        public void SetCompany(string company)
+        { this.company = company; }
 
         public Position GetInitialPosition()
         { return this.initialPosition; }
@@ -163,6 +169,7 @@ namespace FlightLib
             Console.WriteLine("******************************");
             Console.WriteLine("Datos del vuelo: ");
             Console.WriteLine("Identificador: {0}", id);
+            Console.WriteLine("Compañía:{0}", company);
             Console.WriteLine("Velocidad: {0:F2}", velocidad); //el :F2 es perquè sigui un float amb dos decimals
             Console.WriteLine("Posición actual: ({0:F2},{1:F2})", currentPosition.GetX(), currentPosition.GetY());
             if (this.HasArrived())

@@ -28,6 +28,7 @@ namespace FlightSimulator
                 lblCurrentPosition.Text = string.Format("Current Position: ({0:F2}, {1:F2})", plan.GetCurrentPosition().GetX(), plan.GetCurrentPosition().GetY());
                 lblFinalPosition.Text = string.Format("Final Position: ({0:F2}, {1:F2})", plan.GetFinalPosition().GetX(), plan.GetFinalPosition().GetY());
                 lblVelocidad.Text = "Speed: " + plan.GetVelocidad().ToString("F2");
+                lblCompany.Text ="Company: " + plan.GetCompany();
             }
 
         }
