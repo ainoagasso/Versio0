@@ -19,19 +19,28 @@ namespace FlightSimulator
         private bool simulacionEnEjecucion = false;
 
         int estado = 0; // 0 = parado, 1 = en ejecución
-        public double distanciaSeguridad = 80;
+        public double distanciaSeguridad;
 
-        public SimulationForm(FlightPlan p1, FlightPlan p2, double tiempoCiclo)
+        public SimulationForm(FlightPlan p1, FlightPlan p2, double tiempoCiclo, double distanciaSeguridad)
         {
             InitializeComponent();
             this.plan1 = p1;
             this.plan2 = p2;
             this.tiempoCiclo = tiempoCiclo;
+            this.distanciaSeguridad = distanciaSeguridad;
         }
 
+        private Image originalImage1;
+        private Image originalImage2;
         private void SimulationForm_Load(object sender, EventArgs e)
         {
             timer1.Interval = 1000;
+
+            // Guardem la imatge inicial original clonant-la abans de girar-la
+            if (pbAvion1.Image != null) 
+                originalImage1 = (Image)pbAvion1.Image.Clone();
+            if (pbAvion2.Image != null) originalImage2 = (Image)pbAvion2.Image.Clone();
+
             if (plan1 != null)
             {
                 pbAvion1.Location = new Point((int)plan1.GetCurrentPosition().GetX() - (pbAvion1.Width / 2), (int)plan1.GetCurrentPosition().GetY() - (pbAvion1.Height / 2));
@@ -76,9 +85,14 @@ namespace FlightSimulator
 
             numVelocidad1.Value = (decimal)plan1.GetVelocidad();
             numVelocidad2.Value = (decimal)plan2.GetVelocidad();
+<<<<<<< HEAD
 
             HeadingAvio(pbAvion1, plan1);
             HeadingAvio(pbAvion2, plan2);
+=======
+            HeadingAvio(pbAvion1, plan1, originalImage1);
+            HeadingAvio(pbAvion2, plan2, originalImage2);
+>>>>>>> 0209f19a9a12aa3ec6a47e3f82c704d05e1dd7fb
             ComprobarAlarmaConflicto();
         }
 
@@ -303,8 +317,8 @@ namespace FlightSimulator
             pbAvion1.Location = new Point((int)plan1.GetInitialPosition().GetX() - (pbAvion1.Width / 2), (int)plan1.GetInitialPosition().GetY() - (pbAvion1.Height / 2));
             pbAvion2.Location = new Point((int)plan2.GetInitialPosition().GetX() - (pbAvion2.Width / 2), (int)plan2.GetInitialPosition().GetY() - (pbAvion2.Height / 2));
 
-            HeadingAvio(pbAvion1, plan1);
-            HeadingAvio(pbAvion2, plan2);
+            HeadingAvio(pbAvion1, plan1, originalImage1);
+            HeadingAvio(pbAvion2, plan2, originalImage2);
             
             ComprobarAlarmaConflicto();
 
@@ -312,10 +326,10 @@ namespace FlightSimulator
             panelMap.Update();
         }
 
-        private void HeadingAvio(PictureBox pb, FlightPlan plan)
+        private void HeadingAvio(PictureBox pb, FlightPlan plan, Image originalImg)
         {
             if (pb.Image == null || plan == null) return;
-            Image imatgeplane = pb.Image; //és la imatge original de l'avió que hi ha al PictureBox
+           //és la imatge original de l'avió que hi ha al PictureBox
 
             //Calculo la direcció de l'avió a partir de la posició inicial i final
             double dx = plan.GetFinalPosition().GetX() - plan.GetInitialPosition().GetX();
@@ -324,8 +338,15 @@ namespace FlightSimulator
             //Calculo l'angle de rotació a partir de la direcció
             double heading = Math.Atan2(dy, dx) * (180 / Math.PI); //el 180/Math.PI és per convertir de radians a graus
 
-            pb.Image = RotarAvio(imatgeplane, (float)heading);
-           
+            Image imagenRotada = RotarAvio(originalImg, (float)heading);
+
+            if (pb.Image != null && pb.Image != originalImg)
+            {
+                pb.Image.Dispose(); //destrueix imatge antiga
+            }
+
+            pb.Image = imagenRotada;
+
         }
 
         private Image RotarAvio(Image imgplane, float heading)

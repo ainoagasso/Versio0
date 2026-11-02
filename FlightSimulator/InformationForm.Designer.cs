@@ -39,41 +39,61 @@
             // lblId
             // 
             lblId.BorderStyle = BorderStyle.FixedSingle;
-            lblId.Location = new Point(93, 115);
+            lblId.Location = new Point(62, 115);
             lblId.Name = "lblId";
+<<<<<<< HEAD
             lblId.Size = new Size(363, 22);
+=======
+            lblId.Size = new Size(231, 22);
+>>>>>>> 0209f19a9a12aa3ec6a47e3f82c704d05e1dd7fb
             lblId.TabIndex = 0;
             // 
             // lblInitialPosition
             // 
             lblInitialPosition.BorderStyle = BorderStyle.FixedSingle;
-            lblInitialPosition.Location = new Point(93, 173);
+            lblInitialPosition.Location = new Point(62, 173);
             lblInitialPosition.Name = "lblInitialPosition";
+<<<<<<< HEAD
             lblInitialPosition.Size = new Size(363, 22);
+=======
+            lblInitialPosition.Size = new Size(231, 22);
+>>>>>>> 0209f19a9a12aa3ec6a47e3f82c704d05e1dd7fb
             lblInitialPosition.TabIndex = 1;
             // 
             // lblCurrentPosition
             // 
             lblCurrentPosition.BorderStyle = BorderStyle.FixedSingle;
-            lblCurrentPosition.Location = new Point(93, 221);
+            lblCurrentPosition.Location = new Point(62, 221);
             lblCurrentPosition.Name = "lblCurrentPosition";
+<<<<<<< HEAD
             lblCurrentPosition.Size = new Size(363, 22);
+=======
+            lblCurrentPosition.Size = new Size(231, 22);
+>>>>>>> 0209f19a9a12aa3ec6a47e3f82c704d05e1dd7fb
             lblCurrentPosition.TabIndex = 2;
             // 
             // lblFinalPosition
             // 
             lblFinalPosition.BorderStyle = BorderStyle.FixedSingle;
-            lblFinalPosition.Location = new Point(93, 274);
+            lblFinalPosition.Location = new Point(62, 274);
             lblFinalPosition.Name = "lblFinalPosition";
+<<<<<<< HEAD
             lblFinalPosition.Size = new Size(363, 22);
+=======
+            lblFinalPosition.Size = new Size(231, 22);
+>>>>>>> 0209f19a9a12aa3ec6a47e3f82c704d05e1dd7fb
             lblFinalPosition.TabIndex = 3;
             // 
             // lblVelocidad
             // 
             lblVelocidad.BorderStyle = BorderStyle.FixedSingle;
-            lblVelocidad.Location = new Point(93, 328);
+            lblVelocidad.Location = new Point(62, 328);
             lblVelocidad.Name = "lblVelocidad";
+<<<<<<< HEAD
             lblVelocidad.Size = new Size(363, 22);
+=======
+            lblVelocidad.Size = new Size(231, 22);
+>>>>>>> 0209f19a9a12aa3ec6a47e3f82c704d05e1dd7fb
             lblVelocidad.TabIndex = 4;
             // 
             // lblCompany

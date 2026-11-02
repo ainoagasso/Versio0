@@ -43,7 +43,7 @@ namespace FlightSimulator
         {
             if (Vuelo1 != null && Vuelo2 != null)
             {
-                SimulationForm simForm = new SimulationForm(Vuelo1, Vuelo2, tiempoCiclo);
+                SimulationForm simForm = new SimulationForm(Vuelo1, Vuelo2, tiempoCiclo, distanciaSeguridad);
                 simForm.Show();
             }
             else
