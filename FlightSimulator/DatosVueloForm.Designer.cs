@@ -53,6 +53,7 @@
             Controls.Add(tabladatos);
             Name = "DatosVueloForm";
             Text = "DatosVueloForm";
+            Load += DatosVueloForm_Load;
             ((System.ComponentModel.ISupportInitialize)tabladatos).EndInit();
             ResumeLayout(false);
         }

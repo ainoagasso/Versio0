@@ -50,6 +50,7 @@
             Controls.Add(label1);
             Name = "DistanciaForm";
             Text = "DistanciaForm";
+            Load += DistanciaForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

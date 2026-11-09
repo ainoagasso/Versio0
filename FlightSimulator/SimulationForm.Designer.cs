@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimulationForm));
             panelMap = new Panel();
-            pbAvion2 = new PictureBox();
-            pbAvion1 = new PictureBox();
             Mover = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -53,9 +50,6 @@
             statusStrip1 = new StatusStrip();
             lblCoordenadas = new ToolStripStatusLabel();
             lblEstadoAlarma = new ToolStripStatusLabel();
-            panelMap.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbAvion2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbAvion1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numVelocidad1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numVelocidad2).BeginInit();
             groupBox1.SuspendLayout();
@@ -66,38 +60,12 @@
             // 
             panelMap.BackColor = Color.LightSteelBlue;
             panelMap.BorderStyle = BorderStyle.FixedSingle;
-            panelMap.Controls.Add(pbAvion2);
-            panelMap.Controls.Add(pbAvion1);
             panelMap.Location = new Point(276, 31);
             panelMap.Name = "panelMap";
             panelMap.Size = new Size(800, 700);
             panelMap.TabIndex = 0;
             panelMap.Paint += panelMap_Paint;
             panelMap.MouseMove += panelMap_MouseMove;
-            // 
-            // pbAvion2
-            // 
-            pbAvion2.BackColor = Color.Transparent;
-            pbAvion2.Image = (Image)resources.GetObject("pbAvion2.Image");
-            pbAvion2.Location = new Point(372, 260);
-            pbAvion2.Name = "pbAvion2";
-            pbAvion2.Size = new Size(92, 94);
-            pbAvion2.SizeMode = PictureBoxSizeMode.Zoom;
-            pbAvion2.TabIndex = 1;
-            pbAvion2.TabStop = false;
-            pbAvion2.Click += pbAvion2_Click;
-            // 
-            // pbAvion1
-            // 
-            pbAvion1.BackColor = Color.Transparent;
-            pbAvion1.Image = (Image)resources.GetObject("pbAvion1.Image");
-            pbAvion1.Location = new Point(219, 96);
-            pbAvion1.Name = "pbAvion1";
-            pbAvion1.Size = new Size(92, 94);
-            pbAvion1.SizeMode = PictureBoxSizeMode.Zoom;
-            pbAvion1.TabIndex = 0;
-            pbAvion1.TabStop = false;
-            pbAvion1.Click += pbAvion1_Click;
             // 
             // Mover
             // 
@@ -219,7 +187,6 @@
             numVelocidad1.Name = "numVelocidad1";
             numVelocidad1.Size = new Size(135, 27);
             numVelocidad1.TabIndex = 13;
-            numVelocidad1.ValueChanged += numVelocidad1_ValueChanged;
             // 
             // numVelocidad2
             // 
@@ -228,7 +195,6 @@
             numVelocidad2.Name = "numVelocidad2";
             numVelocidad2.Size = new Size(135, 27);
             numVelocidad2.TabIndex = 14;
-            numVelocidad2.ValueChanged += numVelocidad2_ValueChanged;
             // 
             // label5
             // 
@@ -312,9 +278,6 @@
             Name = "SimulationForm";
             Text = "SimulationForm";
             Load += SimulationForm_Load;
-            panelMap.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbAvion2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbAvion1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numVelocidad1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numVelocidad2).EndInit();
             groupBox1.ResumeLayout(false);
@@ -327,8 +290,6 @@
         #endregion
 
         private Panel panelMap;
-        private PictureBox pbAvion2;
-        private PictureBox pbAvion1;
         private Button Mover;
         private Label label1;
         private Label label2;

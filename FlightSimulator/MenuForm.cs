@@ -5,12 +5,11 @@ namespace FlightSimulator
 {
     public partial class MenuForm : Form
     {
-        private FlightPlan Vuelo1;
-        private FlightPlan Vuelo2;
-        
+        private FlightPlanList listaVuelos = new FlightPlanList();
 
-        private double distanciaSeguridad=50;
-        private double tiempoCiclo=10;
+
+        private double distanciaSeguridad = 50;
+        private double tiempoCiclo = 10;
         public MenuForm()
         {
             InitializeComponent();
@@ -18,12 +17,25 @@ namespace FlightSimulator
 
         private void planesDeVueloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FlightForm ventanaVuelos = new FlightForm();
+            OpenFileDialog dialogo = new OpenFileDialog();
+            dialogo.Filter = "Ficheros de texto|*.txt";
 
-            if (ventanaVuelos.ShowDialog() == DialogResult.OK)
+            if (dialogo.ShowDialog() == DialogResult.OK)
             {
-                this.Vuelo1 = ventanaVuelos.GetPlan1();
-                this.Vuelo2 = ventanaVuelos.GetPlan2();
+                int resultado = listaVuelos.CargarFichero(dialogo.FileName);
+
+                if (resultado == 0)
+                {
+                    MessageBox.Show("Se han cargado " + listaVuelos.DameNum() + " vuelos correctamente.");
+                }
+                else if (resultado == -1)
+                {
+                    MessageBox.Show("Error: El fichero no existe.");
+                }
+                else if (resultado == -2)
+                {
+                    MessageBox.Show("Error: El formato de los datos es incorrecto.");
+                }
             }
         }
 
@@ -41,15 +53,20 @@ namespace FlightSimulator
 
         private void simulaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Vuelo1 != null && Vuelo2 != null)
+            if (listaVuelos != null && listaVuelos.DameNum() > 0)
             {
-                SimulationForm simForm = new SimulationForm(Vuelo1, Vuelo2, tiempoCiclo, distanciaSeguridad);
+                SimulationForm simForm = new SimulationForm(listaVuelos, tiempoCiclo, distanciaSeguridad);
                 simForm.Show();
             }
             else
             {
                 MessageBox.Show("Primer has d'introduir els plans de vol des del menú!");
             }
+        }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

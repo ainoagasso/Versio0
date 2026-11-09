@@ -26,6 +26,7 @@ namespace FlightLib
             this.currentPosition = new Position(cpx, cpy);
             this.finalPosition = new Position(fpx, fpy);
             this.velocidad = velocidad;
+            this.company = company;
         }
 
         

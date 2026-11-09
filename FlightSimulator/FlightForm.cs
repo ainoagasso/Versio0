@@ -54,7 +54,7 @@ namespace FlightSimulator
                 double fpx = Convert.ToDouble(txtFpx.Text);
                 double fpy = Convert.ToDouble(txtFpy.Text);
                 double vel = Convert.ToDouble(txtVelocidad.Text);
-
+                string co = "Vueling"; 
 
                 if (vel <= 0)
                 {
@@ -72,7 +72,7 @@ namespace FlightSimulator
 
                 if (contadorVuelo == 1)
                 {
-                    this.plan1 = new FlightPlan(id, cpx, cpy, fpx, fpy, vel);
+                    this.plan1 = new FlightPlan(id, co, cpx, cpy, fpx, fpy, vel);
 
                     contadorVuelo = 2;
                     lblTitulo.Text = "Introduce los datos del Vuelo 2";
@@ -82,7 +82,7 @@ namespace FlightSimulator
                 }
                 else if (contadorVuelo == 2)
                 {
-                    this.plan2 = new FlightPlan(id, cpx, cpy, fpx, fpy, vel);
+                    this.plan2 = new FlightPlan(id, co, cpx, cpy, fpx, fpy, vel);
 
                     MessageBox.Show("Los dos planes de vuelo se han guardado con éxito.");
 
@@ -114,6 +114,7 @@ namespace FlightSimulator
             txtCpy.Text = "0";
             txtFpx.Text = "450";
             txtFpy.Text = "500";
+            
 
         }
 
@@ -125,6 +126,7 @@ namespace FlightSimulator
             txtCpy.Text = "0";
             txtFpx.Text = "0";
             txtFpy.Text = "500";
+            
         }
 
        

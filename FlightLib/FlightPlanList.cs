@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace FlightLib
 {
@@ -66,5 +67,75 @@ namespace FlightLib
                 i++;
             }
         }
+
+        public bool TodosHanLlegado()
+        {
+            int i = 0;
+            while (i < vuelos.Count)
+            {
+                if (!vuelos[i].HasArrived())
+                {
+                    return false;
+                }
+                i++;
+            }
+            return true;
+        }
+
+        public int CargarFichero(string ruta)
+        {
+            try
+            {
+                vuelos.Clear();
+
+                using (StreamReader sr = new StreamReader(ruta))
+                {
+                    string line = sr.ReadLine();
+                    while (line != null)
+                    {
+                        if (line != "")
+                        {
+                            string[] parts = line.Split(' ');
+                            if (parts.Length != 7)
+                            {
+                                return -2;
+                            }
+                            string id = parts[0];
+                            string company = parts[1];
+                            double cpx = Convert.ToDouble(parts[2]);
+                            double cpy = Convert.ToDouble(parts[3]);
+                            double fpx = Convert.ToDouble(parts[4]);
+                            double fpy = Convert.ToDouble(parts[5]);
+                            double velocidad = Convert.ToDouble(parts[6]);
+
+                            if (velocidad <= 0)
+                            {
+                                return -2;
+                            }
+
+                            FlightPlan fp = new FlightPlan(id, company, cpx, cpy, fpx, fpy, velocidad);
+                            AddFlightPlan(fp);
+                        }
+
+                        line = sr.ReadLine();
+                    }
+                }
+
+                return 0;
+            }
+            catch (FileNotFoundException)
+            {
+                return -1;
+            }
+            catch (FormatException)
+            {
+                return -2;
+            }
+            catch (Exception)
+            {
+                return -2;
+            }
+        }
     }
+    
 }
