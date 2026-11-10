@@ -48,6 +48,7 @@
             lblCoordenadas = new ToolStripStatusLabel();
             lblEstadoAlarma = new ToolStripStatusLabel();
             cmbVuelos = new ComboBox();
+            btnUndo = new Button();
             ((System.ComponentModel.ISupportInitialize)numVelocidad).BeginInit();
             groupBox1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -159,7 +160,7 @@
             PrediccionConflicto.Location = new Point(120, 26);
             PrediccionConflicto.Margin = new Padding(2);
             PrediccionConflicto.Name = "PrediccionConflicto";
-            PrediccionConflicto.Size = new Size(109, 56);
+            PrediccionConflicto.Size = new Size(109, 64);
             PrediccionConflicto.TabIndex = 10;
             PrediccionConflicto.Text = "Predicción Conflicto";
             PrediccionConflicto.UseVisualStyleBackColor = true;
@@ -197,6 +198,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnUndo);
             groupBox1.Controls.Add(Mover);
             groupBox1.Controls.Add(auto);
             groupBox1.Controls.Add(datos);
@@ -237,6 +239,17 @@
             cmbVuelos.Size = new Size(136, 28);
             cmbVuelos.TabIndex = 20;
             cmbVuelos.SelectedIndexChanged += cmbVuelos_SelectedIndexChanged;
+            // 
+            // btnUndo
+            // 
+            btnUndo.FlatStyle = FlatStyle.Popup;
+            btnUndo.Location = new Point(120, 96);
+            btnUndo.Name = "btnUndo";
+            btnUndo.Size = new Size(109, 29);
+            btnUndo.TabIndex = 11;
+            btnUndo.Text = "Deshacer";
+            btnUndo.UseVisualStyleBackColor = true;
+            btnUndo.Click += btnUndo_Click;
             // 
             // SimulationForm
             // 
@@ -287,5 +300,6 @@
         private ToolStripStatusLabel lblCoordenadas;
         private ToolStripStatusLabel lblEstadoAlarma;
         private ComboBox cmbVuelos;
+        private Button btnUndo;
     }
 }

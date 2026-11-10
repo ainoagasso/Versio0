@@ -15,7 +15,7 @@ namespace FlightSimulator
         private FlightPlanList listaVuelos;
         private double tiempoCiclo;
 
-      
+        private Stack<List<(Position pos, double vel)>> historialEstados = new Stack<List<(Position pos, double vel)>>();
 
         int estado = 0; // 0 = parado, 1 = en ejecución
         private double distanciaSeguridad;
@@ -83,6 +83,7 @@ namespace FlightSimulator
 
         private void Mover_Click(object sender, EventArgs e)
         {
+            GuardarEstadoActual();
             listaVuelos.Move(tiempoCiclo);
             ColocarAviones();
             ComprobarAlarmaConflicto();
@@ -165,6 +166,7 @@ namespace FlightSimulator
 
         private void auto_Click(object sender, EventArgs e)
         {
+            GuardarEstadoActual();
             if (estado == 0)
             {
                 timer1.Start();
@@ -191,6 +193,7 @@ namespace FlightSimulator
             }
             else
             {
+                GuardarEstadoActual();
                 listaVuelos.Move(tiempoCiclo);
                 ColocarAviones();
                 ComprobarAlarmaConflicto();
@@ -220,6 +223,7 @@ namespace FlightSimulator
             ColocarAviones();
             ComprobarAlarmaConflicto();
 
+            historialEstados.Clear(); // Limpiar el historial al reiniciar la simulación
             panelMap.Invalidate();
             panelMap.Update();
         }
@@ -302,26 +306,86 @@ namespace FlightSimulator
             }
         }
 
+        private bool cargandoVelocidad = false; //per no guardar un pas fals a l'historial
         private void cmbVuelos_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cmbVuelos.SelectedIndex;
             if (index >= 0 && index < listaVuelos.DameNum())
             {
                 FlightPlan vueloSeleccionado = listaVuelos.GetFlightPlan(index);
+                cargandoVelocidad = true;
                 numVelocidad.Value = (decimal)vueloSeleccionado.GetVelocidad();
+                cargandoVelocidad = false;
             }
         }
 
         private void numVelocidad_ValueChanged(object sender, EventArgs e)
         {
+            if (cargandoVelocidad) return; //si estem carregant la velocitat, no guardem un pas fals a l'historial
             int index = cmbVuelos.SelectedIndex;
             if (index >= 0 && index < listaVuelos.DameNum())
             {
+                GuardarEstadoActual();
                 FlightPlan vueloSeleccionado = listaVuelos.GetFlightPlan(index);
                 vueloSeleccionado.SetVelocidad((double)numVelocidad.Value);
 
                 ComprobarAlarmaConflicto();
                 panelMap.Invalidate();
+            }
+        }
+        private void GuardarEstadoActual()
+        {
+            List<(Position pos, double vel)> estadoActual = new List<(Position pos, double vel)>();
+            int i = 0;
+            while (i < listaVuelos.DameNum())
+            {
+                FlightPlan vuelo = listaVuelos.GetFlightPlan(i);
+                double x = vuelo.GetCurrentPosition().GetX();
+                double y = vuelo.GetCurrentPosition().GetY();
+                double v = vuelo.GetVelocidad();
+                estadoActual.Add((new Position(x, y), v));
+                i++;
+            }
+            historialEstados.Push(estadoActual);
+        }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            //si estava en automàtic, parem el timer
+            if (estado == 1)
+            {
+                timer1.Stop();
+                estado = 0;
+                auto.Text = "Automático";
+            }
+            if (historialEstados.Count>0)
+            {
+                List<(Position pos, double vel)> estadoAnterior=historialEstados.Pop();
+                int i = 0;
+                while (i<listaVuelos.DameNum())
+                {
+                    FlightPlan vuelo = listaVuelos.GetFlightPlan(i);
+                    vuelo.SetCurrentPosition(estadoAnterior[i].pos);
+                    vuelo.SetVelocidad(estadoAnterior[i].vel);
+                    i++;
+                }
+
+                //Actualitzem per si ha canviat la velocitat
+                int index = cmbVuelos.SelectedIndex;
+                if (index >=0)
+                {
+                    cargandoVelocidad = true;
+                    numVelocidad.Value = (decimal)listaVuelos.GetFlightPlan(index).GetVelocidad();
+                    cargandoVelocidad = false;
+                }
+                ColocarAviones();
+                ComprobarAlarmaConflicto();
+                panelMap.Invalidate();
+                panelMap.Update();
+            }
+            else
+            {
+                MessageBox.Show("No hi ha cap pas anterior per desfer.");
             }
         }
     }
