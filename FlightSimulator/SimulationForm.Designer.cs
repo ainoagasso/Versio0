@@ -41,17 +41,14 @@
             labelAlarma = new Label();
             PrediccionConflicto = new Button();
             Reset = new Button();
-            numVelocidad1 = new NumericUpDown();
-            numVelocidad2 = new NumericUpDown();
+            numVelocidad = new NumericUpDown();
             label5 = new Label();
             groupBox1 = new GroupBox();
-            label6 = new Label();
-            label7 = new Label();
             statusStrip1 = new StatusStrip();
             lblCoordenadas = new ToolStripStatusLabel();
             lblEstadoAlarma = new ToolStripStatusLabel();
-            ((System.ComponentModel.ISupportInitialize)numVelocidad1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numVelocidad2).BeginInit();
+            cmbVuelos = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)numVelocidad).BeginInit();
             groupBox1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -172,7 +169,7 @@
             // 
             Reset.BackColor = SystemColors.Control;
             Reset.FlatStyle = FlatStyle.Popup;
-            Reset.Location = new Point(61, 342);
+            Reset.Location = new Point(85, 308);
             Reset.Name = "Reset";
             Reset.Size = new Size(109, 29);
             Reset.TabIndex = 11;
@@ -180,21 +177,14 @@
             Reset.UseVisualStyleBackColor = false;
             Reset.Click += Reset_Click;
             // 
-            // numVelocidad1
+            // numVelocidad
             // 
-            numVelocidad1.Location = new Point(86, 276);
-            numVelocidad1.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
-            numVelocidad1.Name = "numVelocidad1";
-            numVelocidad1.Size = new Size(135, 27);
-            numVelocidad1.TabIndex = 13;
-            // 
-            // numVelocidad2
-            // 
-            numVelocidad2.Location = new Point(86, 309);
-            numVelocidad2.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
-            numVelocidad2.Name = "numVelocidad2";
-            numVelocidad2.Size = new Size(135, 27);
-            numVelocidad2.TabIndex = 14;
+            numVelocidad.Location = new Point(161, 266);
+            numVelocidad.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numVelocidad.Name = "numVelocidad";
+            numVelocidad.Size = new Size(90, 27);
+            numVelocidad.TabIndex = 13;
+            numVelocidad.ValueChanged += numVelocidad_ValueChanged;
             // 
             // label5
             // 
@@ -218,24 +208,6 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Controles";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(18, 276);
-            label6.Name = "label6";
-            label6.Size = new Size(62, 20);
-            label6.TabIndex = 17;
-            label6.Text = "Vuelo 1:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(18, 309);
-            label7.Name = "label7";
-            label7.Size = new Size(62, 20);
-            label7.TabIndex = 18;
-            label7.Text = "Vuelo 2:";
-            // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
@@ -256,18 +228,26 @@
             lblEstadoAlarma.Name = "lblEstadoAlarma";
             lblEstadoAlarma.Size = new Size(0, 16);
             // 
+            // cmbVuelos
+            // 
+            cmbVuelos.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbVuelos.FormattingEnabled = true;
+            cmbVuelos.Location = new Point(19, 265);
+            cmbVuelos.Name = "cmbVuelos";
+            cmbVuelos.Size = new Size(136, 28);
+            cmbVuelos.TabIndex = 20;
+            cmbVuelos.SelectedIndexChanged += cmbVuelos_SelectedIndexChanged;
+            // 
             // SimulationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1111, 766);
+            Controls.Add(cmbVuelos);
             Controls.Add(statusStrip1);
-            Controls.Add(label7);
-            Controls.Add(label6);
             Controls.Add(groupBox1);
             Controls.Add(label5);
-            Controls.Add(numVelocidad2);
-            Controls.Add(numVelocidad1);
+            Controls.Add(numVelocidad);
             Controls.Add(Reset);
             Controls.Add(labelAlarma);
             Controls.Add(label4);
@@ -278,8 +258,7 @@
             Name = "SimulationForm";
             Text = "SimulationForm";
             Load += SimulationForm_Load;
-            ((System.ComponentModel.ISupportInitialize)numVelocidad1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numVelocidad2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numVelocidad).EndInit();
             groupBox1.ResumeLayout(false);
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
@@ -301,14 +280,12 @@
         private Label labelAlarma;
         private Button PrediccionConflicto;
         private Button Reset;
-        private NumericUpDown numVelocidad1;
-        private NumericUpDown numVelocidad2;
+        private NumericUpDown numVelocidad;
         private Label label5;
         private GroupBox groupBox1;
-        private Label label6;
-        private Label label7;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel lblCoordenadas;
         private ToolStripStatusLabel lblEstadoAlarma;
+        private ComboBox cmbVuelos;
     }
 }

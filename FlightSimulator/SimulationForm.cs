@@ -15,7 +15,7 @@ namespace FlightSimulator
         private FlightPlanList listaVuelos;
         private double tiempoCiclo;
 
-        private bool simulacionEnEjecucion = false;
+      
 
         int estado = 0; // 0 = parado, 1 = en ejecución
         private double distanciaSeguridad;
@@ -47,12 +47,14 @@ namespace FlightSimulator
             timer1.Interval = 1000;
 
             originalImage = Properties.Resources.plane; // (usa el nombre exacto de tu recurso de imagen)
+            cmbVuelos.Items.Clear();
 
             // Bucle para crear dinámicamente un PictureBox por cada vuelo de la lista
             int i = 0;
             while (i < listaVuelos.DameNum())
             {
                 FlightPlan vuelo = listaVuelos.GetFlightPlan(i);
+                cmbVuelos.Items.Add(vuelo.GetId());
 
                 PictureBox pb = new PictureBox();
                 pb.Width = 30;
@@ -65,11 +67,18 @@ namespace FlightSimulator
 
                 panelMap.Controls.Add(pb);
                 aviones.Add(pb);
+                HeadingAvio(pb, vuelo, originalImage);
 
                 i++;
             }
+            //seleccionem el primer vol per defecte
+            if (cmbVuelos.Items.Count > 0)
+            {
+                cmbVuelos.SelectedIndex = 0;
+            }
 
             ColocarAviones();
+            ComprobarAlarmaConflicto();
         }
 
         private void Mover_Click(object sender, EventArgs e)
@@ -94,7 +103,8 @@ namespace FlightSimulator
             g.Clear(panelMap.BackColor);
 
             Pen penTrayectoria = new Pen(Color.Blue, 2);
-            Pen penElipse = new Pen(Color.Green, 2);
+            Pen penVerd = new Pen(Color.Green, 2);
+            Pen penVermell = new Pen(Color.Red, 2);
 
             int i = 0;
             while (i < listaVuelos.DameNum())
@@ -109,12 +119,38 @@ namespace FlightSimulator
 
                 g.DrawLine(penTrayectoria, origenX, origenY, finalX, finalY);
 
-                // 2. Dibujar la elipse de seguridad alrededor de la posición actual
+                //Comprobar si el vol té conflicte amb un altre vol de la llista
+                bool conflicto = false;
+                int j = 0;
+                while (j < listaVuelos.DameNum())
+                {
+                    if (i != j)
+                    {
+                        FlightPlan otroVuelo = listaVuelos.GetFlightPlan(j);
+                        if (vuelo.Conflicto(otroVuelo, distanciaSeguridad))
+                        {
+                            conflicto = true;
+                            break;
+                        }
+                    }
+                    j++;
+                }
+
+                // 3. Dibujar la elipse de seguridad alrededor de la posición actual, canviant el color depenent si estan en conflicte o no
+                Pen penActual;
+                if (conflicto)
+                {
+                    penActual = penVermell;
+                }
+                else
+                {
+                    penActual = penVerd;
+                }
                 float radio = (float)distanciaSeguridad;
                 float actualX = (float)vuelo.GetCurrentPosition().GetX();
                 float actualY = (float)vuelo.GetCurrentPosition().GetY();
 
-                g.DrawEllipse(penElipse, actualX - radio, actualY - radio, radio * 2, radio * 2);
+                g.DrawEllipse(penActual, actualX - radio, actualY - radio, radio * 2, radio * 2);
 
                 // 3. Escribir el ID del vuelo encima
                 g.DrawString(vuelo.GetId(), this.Font, Brushes.Black, actualX, actualY - 20);
@@ -123,7 +159,8 @@ namespace FlightSimulator
             }
 
             penTrayectoria.Dispose();
-            penElipse.Dispose();
+            penVerd.Dispose();
+            penVermell.Dispose();
         }
 
         private void auto_Click(object sender, EventArgs e)
@@ -133,11 +170,16 @@ namespace FlightSimulator
                 timer1.Start();
                 estado = 1;
                 auto.Text = "Parar";
-
-                panelMap.Invalidate();
-                panelMap.Update();
-
             }
+            else
+            {
+                timer1.Stop();
+                estado = 0;
+                auto.Text = "Automático";
+            }
+            panelMap.Invalidate();
+            panelMap.Update();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -165,7 +207,7 @@ namespace FlightSimulator
         //Botó de predicció de conflicte, que comprova si els vols es trobaran en conflicte en el futur
         private void PrediccionConflicto_Click(object sender, EventArgs e)
         {
-           // es fa al pas 4
+            // es fa al pas 4
         }
 
         private void Reset_Click(object sender, EventArgs e)
@@ -182,19 +224,21 @@ namespace FlightSimulator
             panelMap.Update();
         }
 
-        private void HeadingAvio(PictureBox pb, FlightPlan plan, Image originalImg)
+        private void HeadingAvio(PictureBox pb, FlightPlan vuelo, Image originalImg)
         {
-            if (pb.Image == null || plan == null) return;
-           //és la imatge original de l'avió que hi ha al PictureBox
+            if (pb.Image == null || vuelo == null || originalImg == null) return;
+            //és la imatge original de l'avió que hi ha al PictureBox
 
             //Calculo la direcció de l'avió a partir de la posició inicial i final
-            double dx = plan.GetFinalPosition().GetX() - plan.GetInitialPosition().GetX();
-            double dy = plan.GetFinalPosition().GetY() - plan.GetInitialPosition().GetY();
+
+            double dx = vuelo.GetFinalPosition().GetX() - vuelo.GetInitialPosition().GetX();
+            double dy = vuelo.GetFinalPosition().GetY() - vuelo.GetInitialPosition().GetY();
 
             //Calculo l'angle de rotació a partir de la direcció
             double heading = Math.Atan2(dy, dx) * (180 / Math.PI); //el 180/Math.PI és per convertir de radians a graus
 
             Image imagenRotada = RotarAvio(originalImg, (float)heading);
+
 
             if (pb.Image != null && pb.Image != originalImg)
             {
@@ -203,42 +247,82 @@ namespace FlightSimulator
 
             pb.Image = imagenRotada;
 
+
+
         }
 
         private Image RotarAvio(Image imgplane, float heading)
         {
-            double rad = heading * Math.PI / 180.0;
-            double cos = Math.Abs(Math.Cos(rad));
-            double sin = Math.Abs(Math.Sin(rad));
 
-            //per no tallar les cantonades
-            int newWidth = (int)Math.Ceiling(imgplane.Width * cos + imgplane.Height * sin); //math ceiling es per arrodonir
-            int newHeight = (int)Math.Ceiling(imgplane.Width * sin + imgplane.Height * cos);
 
-            Bitmap bmp = new Bitmap(newWidth,newHeight); //creem un bitmap una mica més gran que la imatge original
+            Bitmap bmp = new Bitmap(imgplane.Width, imgplane.Height);
 
             using (Graphics g = Graphics.FromImage(bmp)) //creem un objecte gràfic a partir del bitmap
             {
                 //activar les propietats de qualitat per a la rotació (que no surti pixelat)
                 g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                g.TranslateTransform(newWidth / 2f, newHeight / 2f); //Movem el punt d'origen al centre de la imatge
+                g.TranslateTransform(imgplane.Width / 2f, imgplane.Height / 2f); //Movem el punt d'origen al centre de la imatge
                 g.RotateTransform(heading); //girem la imatge segons l'angle de rotació
-              
+
                 g.DrawImage(imgplane, -imgplane.Width / 2f, -imgplane.Height / 2f); //Dibuixem la imatge original centrada al bitmap amb les transformacions aplicades
             }
             return bmp;
         }
-       
+
         private void panelMap_MouseMove(object sender, MouseEventArgs e)
         {
-            lblCoordenadas.Text = "Coordenadas: ({e.X}, {e.Y})";
+            lblCoordenadas.Text = $"Coordenadas: ({e.X}, {e.Y})";
         }
 
         private void ComprobarAlarmaConflicto() //es millora al pas 4
-        {      
-           lblEstadoAlarma.Text = "Sin conflictos";
-           lblEstadoAlarma.ForeColor = Color.DarkGreen;
+        {
+            bool conflicte = false;
+            for (int i = 0; i < listaVuelos.DameNum(); i++)
+            {
+                for (int j = i + 1; j < listaVuelos.DameNum(); j++)
+                {
+                    if (listaVuelos.GetFlightPlan(i).Conflicto(listaVuelos.GetFlightPlan(j), distanciaSeguridad))
+                    {
+                        conflicte = true;
+                        break;
+                    }
+                }
+                if (conflicte) break;
+            }
+            if (conflicte)
+            {
+                lblEstadoAlarma.Text = "ALERTA: Conflicto detectado";
+                lblEstadoAlarma.ForeColor = Color.Red;
+            }
+            else
+            {
+                lblEstadoAlarma.Text = "Sin Conflictos";
+                lblEstadoAlarma.ForeColor = Color.DarkGreen;
+            }
+        }
+
+        private void cmbVuelos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cmbVuelos.SelectedIndex;
+            if (index >= 0 && index < listaVuelos.DameNum())
+            {
+                FlightPlan vueloSeleccionado = listaVuelos.GetFlightPlan(index);
+                numVelocidad.Value = (decimal)vueloSeleccionado.GetVelocidad();
+            }
+        }
+
+        private void numVelocidad_ValueChanged(object sender, EventArgs e)
+        {
+            int index = cmbVuelos.SelectedIndex;
+            if (index >= 0 && index < listaVuelos.DameNum())
+            {
+                FlightPlan vueloSeleccionado = listaVuelos.GetFlightPlan(index);
+                vueloSeleccionado.SetVelocidad((double)numVelocidad.Value);
+
+                ComprobarAlarmaConflicto();
+                panelMap.Invalidate();
+            }
         }
     }
 }
