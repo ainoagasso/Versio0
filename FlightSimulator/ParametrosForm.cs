@@ -57,5 +57,10 @@ namespace FlightSimulator
                 MessageBox.Show("Introduce valores numéricos");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

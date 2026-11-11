@@ -18,7 +18,7 @@ namespace FlightLib
 
         public int AddFlightPlan(FlightPlan p)
         {
-           
+
             {
                 vuelos.Add(p);
                 return 0;
@@ -37,10 +37,10 @@ namespace FlightLib
         }
 
         //Recorre todos los elementos del vector y llama al método Mover para mover cada uno
-        public void Move (double tiempo)
+        public void Move(double tiempo)
         {
             int i = 0;
-            while (i< this.vuelos.Count)
+            while (i < this.vuelos.Count)
             {
                 vuelos[i].Move(tiempo);
                 i++;
@@ -136,6 +136,35 @@ namespace FlightLib
                 return -2;
             }
         }
+        public int GuardarFichero(string ruta)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(ruta))
+                {
+                    int i = 0;
+                    while (i < vuelos.Count) 
+                    {
+                        FlightPlan vuelo = vuelos[i];
+                        string linea = vuelo.GetId() + " " + vuelo.GetCompany() + " " + vuelo.GetCurrentPosition().GetX() + " " + vuelo.GetCurrentPosition().GetY() + " " + vuelo.GetFinalPosition().GetX() + " " + vuelo.GetFinalPosition().GetY() + " " + vuelo.GetVelocidad();
+                        sw.WriteLine(linea);
+                        i++;
+                    }
+                    if(vuelos.Count == 0)
+                    {
+                        return -3;
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+
+            }
+
+        }
     }
-    
 }
+    
+

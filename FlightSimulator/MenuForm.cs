@@ -36,6 +36,10 @@ namespace FlightSimulator
                 {
                     MessageBox.Show("Error: El formato de los datos es incorrecto.");
                 }
+                else if (resultado == -3)
+                {
+                    MessageBox.Show("Error: El fichero está vacío.");
+                }
             }
         }
 

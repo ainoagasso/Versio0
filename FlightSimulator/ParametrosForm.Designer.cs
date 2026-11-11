@@ -75,7 +75,7 @@
             btnAceptar.TabIndex = 4;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
-            btnAceptar.Click += this.btnAceptar_Click;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // ParametrosForm
             // 

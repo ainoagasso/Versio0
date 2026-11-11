@@ -44,11 +44,12 @@
             numVelocidad = new NumericUpDown();
             label5 = new Label();
             groupBox1 = new GroupBox();
+            btnUndo = new Button();
             statusStrip1 = new StatusStrip();
             lblCoordenadas = new ToolStripStatusLabel();
             lblEstadoAlarma = new ToolStripStatusLabel();
             cmbVuelos = new ComboBox();
-            btnUndo = new Button();
+            btnGuardar = new Button();
             ((System.ComponentModel.ISupportInitialize)numVelocidad).BeginInit();
             groupBox1.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -210,6 +211,17 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Controles";
             // 
+            // btnUndo
+            // 
+            btnUndo.FlatStyle = FlatStyle.Popup;
+            btnUndo.Location = new Point(120, 96);
+            btnUndo.Name = "btnUndo";
+            btnUndo.Size = new Size(109, 29);
+            btnUndo.TabIndex = 11;
+            btnUndo.Text = "Deshacer";
+            btnUndo.UseVisualStyleBackColor = true;
+            btnUndo.Click += btnUndo_Click;
+            // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(20, 20);
@@ -240,22 +252,22 @@
             cmbVuelos.TabIndex = 20;
             cmbVuelos.SelectedIndexChanged += cmbVuelos_SelectedIndexChanged;
             // 
-            // btnUndo
+            // btnGuardar
             // 
-            btnUndo.FlatStyle = FlatStyle.Popup;
-            btnUndo.Location = new Point(120, 96);
-            btnUndo.Name = "btnUndo";
-            btnUndo.Size = new Size(109, 29);
-            btnUndo.TabIndex = 11;
-            btnUndo.Text = "Deshacer";
-            btnUndo.UseVisualStyleBackColor = true;
-            btnUndo.Click += btnUndo_Click;
+            btnGuardar.Location = new Point(20, 476);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(232, 29);
+            btnGuardar.TabIndex = 21;
+            btnGuardar.Text = "Guardar y Salir";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // SimulationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1111, 766);
+            Controls.Add(btnGuardar);
             Controls.Add(cmbVuelos);
             Controls.Add(statusStrip1);
             Controls.Add(groupBox1);
@@ -301,5 +313,6 @@
         private ToolStripStatusLabel lblEstadoAlarma;
         private ComboBox cmbVuelos;
         private Button btnUndo;
+        private Button btnGuardar;
     }
 }

@@ -67,6 +67,8 @@ namespace FlightLib
         public void Move(double tiempo)
         // Mueve el vuelo a la posición correspondiente a viajar durante el tiempo que se recibe como parámetro
         {
+            if (this.HasArrived())
+                return;
             //Calculamos la distancia recorrida en el tiempo dado
             double distancia = tiempo * this.velocidad / 60;
 
@@ -94,7 +96,7 @@ namespace FlightLib
         public bool HasArrived()
         {
             bool resultado = false;
-            if (currentPosition == finalPosition)
+            if (currentPosition.Distancia(finalPosition)<0.01)
                 resultado = true;
             return resultado;
         }

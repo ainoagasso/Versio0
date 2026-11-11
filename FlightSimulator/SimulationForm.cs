@@ -358,11 +358,11 @@ namespace FlightSimulator
                 estado = 0;
                 auto.Text = "Automático";
             }
-            if (historialEstados.Count>0)
+            if (historialEstados.Count > 0)
             {
-                List<(Position pos, double vel)> estadoAnterior=historialEstados.Pop();
+                List<(Position pos, double vel)> estadoAnterior = historialEstados.Pop();
                 int i = 0;
-                while (i<listaVuelos.DameNum())
+                while (i < listaVuelos.DameNum())
                 {
                     FlightPlan vuelo = listaVuelos.GetFlightPlan(i);
                     vuelo.SetCurrentPosition(estadoAnterior[i].pos);
@@ -372,7 +372,7 @@ namespace FlightSimulator
 
                 //Actualitzem per si ha canviat la velocitat
                 int index = cmbVuelos.SelectedIndex;
-                if (index >=0)
+                if (index >= 0)
                 {
                     cargandoVelocidad = true;
                     numVelocidad.Value = (decimal)listaVuelos.GetFlightPlan(index).GetVelocidad();
@@ -388,6 +388,29 @@ namespace FlightSimulator
                 MessageBox.Show("No hi ha cap pas anterior per desfer.");
             }
         }
-    }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            estado = 0;
+            auto.Text = "Automático";
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Ficheros de texto (*.txt)|*.txt";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                int resultado = listaVuelos.GuardarFichero(saveFileDialog.FileName);
+                if (resultado == 0)
+                {
+                    MessageBox.Show("Fichero guardado correctamente.");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error al guardar el fichero.");
+                }
+
+            }
+        }
+    }       
 }
  
