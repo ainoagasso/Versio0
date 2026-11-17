@@ -6,11 +6,18 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FlightLib\FlightLib.csproj" />
     <ProjectReference Include="..\SimulatorConsole\SimulatorConsole.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\..\..\Mac\Home\Desktop\practicaDB\System\System.Data.SQLite.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

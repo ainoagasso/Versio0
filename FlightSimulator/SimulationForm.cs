@@ -46,7 +46,7 @@ namespace FlightSimulator
         {
             timer1.Interval = 1000;
 
-            originalImage = Properties.Resources.plane; // (usa el nombre exacto de tu recurso de imagen)
+            originalImage = Properties.Resources.pinkairplane; // (usa el nombre exacto de tu recurso de imagen)
             cmbVuelos.Items.Clear();
 
             // Bucle para crear dinámicamente un PictureBox por cada vuelo de la lista
@@ -57,8 +57,8 @@ namespace FlightSimulator
                 cmbVuelos.Items.Add(vuelo.GetId());
 
                 PictureBox pb = new PictureBox();
-                pb.Width = 30;
-                pb.Height = 30;
+                pb.Width = 60;
+                pb.Height = 60;
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
                 pb.BackColor = Color.Transparent;
                 pb.Image = originalImage;
@@ -239,7 +239,7 @@ namespace FlightSimulator
             double dy = vuelo.GetFinalPosition().GetY() - vuelo.GetInitialPosition().GetY();
 
             //Calculo l'angle de rotació a partir de la direcció
-            double heading = Math.Atan2(dy, dx) * (180 / Math.PI); //el 180/Math.PI és per convertir de radians a graus
+            double heading = Math.Atan2(dy, dx) * (180 / Math.PI)+90; //el 180/Math.PI és per convertir de radians a graus
 
             Image imagenRotada = RotarAvio(originalImg, (float)heading);
 
