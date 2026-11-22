@@ -15,6 +15,7 @@ namespace FlightSimulator
         private FlightPlanList listaVuelos;
         private double tiempoCiclo;
 
+        // crear una pila, on cada element es una llista de la posició i velocitat de tots els avions (ara mateix està buida)
         private Stack<List<(Position pos, double vel)>> historialEstados = new Stack<List<(Position pos, double vel)>>();
 
         int estado = 0; // 0 = parado, 1 = en ejecución
@@ -28,7 +29,9 @@ namespace FlightSimulator
             this.distanciaSeguridad = distanciaSeguridad;
         }
 
+        //llista dels picturebox que representen visualment cada avió al mapa
         private List<PictureBox> aviones = new List<PictureBox>();
+        //guardem la imatge base de l'avió per poder-la rotar sense perdre qualitat
         private Image originalImage;
         private void ColocarAviones()
         {
@@ -46,7 +49,7 @@ namespace FlightSimulator
         {
             timer1.Interval = 1000;
 
-            originalImage = Properties.Resources.pinkairplane; // (usa el nombre exacto de tu recurso de imagen)
+            originalImage = Properties.Resources.pinkairplane; 
             cmbVuelos.Items.Clear();
 
             // Bucle para crear dinámicamente un PictureBox por cada vuelo de la lista
@@ -54,7 +57,7 @@ namespace FlightSimulator
             while (i < listaVuelos.DameNum())
             {
                 FlightPlan vuelo = listaVuelos.GetFlightPlan(i);
-                cmbVuelos.Items.Add(vuelo.GetId());
+                cmbVuelos.Items.Add(vuelo.GetId()); //afegim el ID al desplegable perquè l'usuari el pugui triar
 
                 PictureBox pb = new PictureBox();
                 pb.Width = 60;
@@ -135,7 +138,7 @@ namespace FlightSimulator
                 int j = 0;
                 while (j < listaVuelos.DameNum())
                 {
-                    if (i != j)
+                    if (i != j) //no comparem un avió amb si mateix
                     {
                         FlightPlan otroVuelo = listaVuelos.GetFlightPlan(j);
                         if (vuelo.Conflicto(otroVuelo, distanciaSeguridad))
@@ -276,7 +279,6 @@ namespace FlightSimulator
         private Image RotarAvio(Image imgplane, float heading)
         {
 
-
             Bitmap bmp = new Bitmap(imgplane.Width, imgplane.Height);
 
             using (Graphics g = Graphics.FromImage(bmp)) //creem un objecte gràfic a partir del bitmap
@@ -297,7 +299,7 @@ namespace FlightSimulator
             lblCoordenadas.Text = $"Coordenadas: ({e.X}, {e.Y})";
         }
 
-        private void ComprobarAlarmaConflicto() //es millora al pas 4
+        private void ComprobarAlarmaConflicto() 
         {
             bool conflicte = false;
             for (int i = 0; i < listaVuelos.DameNum(); i++)
@@ -332,14 +334,14 @@ namespace FlightSimulator
                 {
                     if (listaVuelos.GetFlightPlan(i).PredecirConflicto(listaVuelos.GetFlightPlan(i), listaVuelos.GetFlightPlan(j), distanciaSeguridad))
                     {
-                        return true;
+                        return true; //si que xocaran
                     }
                 }
             }
             return false;
         }
 
-        private bool cargandoVelocidad = false; //per no guardar un pas fals a l'historial
+        private bool cargandoVelocidad = false; //Interruptor de seguretat perquè el programa no es pensi que l'usuari ha canviat la velocitat quan només estem carregant dades
         private void cmbVuelos_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cmbVuelos.SelectedIndex;
@@ -368,6 +370,7 @@ namespace FlightSimulator
         }
         private void GuardarEstadoActual()
         {
+            //creem una llista temporal per guardar on està cada avió i la seva velocitat va
             List<(Position pos, double vel)> estadoActual = new List<(Position pos, double vel)>();
             int i = 0;
             while (i < listaVuelos.DameNum())
@@ -379,7 +382,7 @@ namespace FlightSimulator
                 estadoActual.Add((new Position(x, y), v));
                 i++;
             }
-            historialEstados.Push(estadoActual);
+            historialEstados.Push(estadoActual); //ho posem a dalt de la pila, així l'últim estat és el primer a recuperar
         }
 
         private void btnUndo_Click(object sender, EventArgs e)
@@ -391,9 +394,9 @@ namespace FlightSimulator
                 estado = 0;
                 auto.Text = "Automático";
             }
-            if (historialEstados.Count > 0)
+            if (historialEstados.Count > 0) //comprovem que hi ha algun estat anterior guardat a la pila
             {
-                List<(Position pos, double vel)> estadoAnterior = historialEstados.Pop();
+                List<(Position pos, double vel)> estadoAnterior = historialEstados.Pop(); //recuperem l'últim estat guardat
                 int i = 0;
                 while (i < listaVuelos.DameNum())
                 {
@@ -418,13 +421,13 @@ namespace FlightSimulator
             }
             else
             {
-                MessageBox.Show("No hi ha cap pas anterior per desfer.");
+                MessageBox.Show("No hi ha cap pas anterior per desfer."); //si la pila està buida avisem que no es pot tirar més enrere
             }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            timer1.Stop();
+            timer1.Stop(); //parem la simulació mentre guardem
             estado = 0;
             auto.Text = "Automático";
             SaveFileDialog saveFileDialog = new SaveFileDialog();
