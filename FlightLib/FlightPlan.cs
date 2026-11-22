@@ -150,10 +150,18 @@ namespace FlightLib
             //obtinc el temps amb la derivada 
             double numerador = -((dx*dvx) + (dy * dvy));
             double denominador = (dvx * dvx) + (dvy * dvy);
-            double t = numerador / denominador;
+            double t = 0;
+            if (denominador != 0)
+            {
+                t = numerador / denominador;
+            }
+            if (t < 0)
+            {
+                t = 0;
+            }
 
-            
-                double x1t = x1 + vx1 * t;
+
+            double x1t = x1 + vx1 * t;
                 double y1t = y1 + vy1 * t;
                 double x2t = x2 + vx2 * t;
                 double y2t = y2 + vy2 * t;

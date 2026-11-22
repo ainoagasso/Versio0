@@ -68,7 +68,7 @@
             // 
             // Mover
             // 
-            Mover.BackColor = SystemColors.Control;
+            Mover.BackColor = SystemColors.GradientInactiveCaption;
             Mover.FlatStyle = FlatStyle.Popup;
             Mover.Location = new Point(6, 26);
             Mover.Name = "Mover";
@@ -120,13 +120,14 @@
             // 
             // auto
             // 
+            auto.BackColor = SystemColors.GradientInactiveCaption;
             auto.FlatStyle = FlatStyle.Popup;
             auto.Location = new Point(6, 61);
             auto.Name = "auto";
             auto.Size = new Size(109, 29);
             auto.TabIndex = 7;
             auto.Text = "Automático";
-            auto.UseVisualStyleBackColor = true;
+            auto.UseVisualStyleBackColor = false;
             auto.Click += auto_Click;
             // 
             // timer1
@@ -135,13 +136,14 @@
             // 
             // datos
             // 
+            datos.BackColor = SystemColors.GradientInactiveCaption;
             datos.FlatStyle = FlatStyle.Popup;
             datos.Location = new Point(6, 96);
             datos.Name = "datos";
             datos.Size = new Size(109, 29);
             datos.TabIndex = 8;
             datos.Text = "Datos";
-            datos.UseVisualStyleBackColor = true;
+            datos.UseVisualStyleBackColor = false;
             datos.Click += datos_Click;
             // 
             // labelAlarma
@@ -157,6 +159,7 @@
             // 
             // PrediccionConflicto
             // 
+            PrediccionConflicto.BackColor = SystemColors.GradientInactiveCaption;
             PrediccionConflicto.FlatStyle = FlatStyle.Popup;
             PrediccionConflicto.Location = new Point(120, 26);
             PrediccionConflicto.Margin = new Padding(2);
@@ -164,7 +167,7 @@
             PrediccionConflicto.Size = new Size(109, 64);
             PrediccionConflicto.TabIndex = 10;
             PrediccionConflicto.Text = "Predicción Conflicto";
-            PrediccionConflicto.UseVisualStyleBackColor = true;
+            PrediccionConflicto.UseVisualStyleBackColor = false;
             PrediccionConflicto.Click += PrediccionConflicto_Click;
             // 
             // Reset
@@ -213,13 +216,14 @@
             // 
             // btnUndo
             // 
+            btnUndo.BackColor = SystemColors.GradientInactiveCaption;
             btnUndo.FlatStyle = FlatStyle.Popup;
             btnUndo.Location = new Point(120, 96);
             btnUndo.Name = "btnUndo";
             btnUndo.Size = new Size(109, 29);
             btnUndo.TabIndex = 11;
             btnUndo.Text = "Deshacer";
-            btnUndo.UseVisualStyleBackColor = true;
+            btnUndo.UseVisualStyleBackColor = false;
             btnUndo.Click += btnUndo_Click;
             // 
             // statusStrip1
@@ -254,12 +258,13 @@
             // 
             // btnGuardar
             // 
+            btnGuardar.BackColor = SystemColors.ControlLightLight;
             btnGuardar.Location = new Point(20, 476);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(232, 29);
             btnGuardar.TabIndex = 21;
             btnGuardar.Text = "Guardar y Salir";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // SimulationForm

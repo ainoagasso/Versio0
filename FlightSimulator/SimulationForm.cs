@@ -79,6 +79,10 @@ namespace FlightSimulator
 
             ColocarAviones();
             ComprobarAlarmaConflicto();
+            if (HayConflictoPrevisto())
+            {
+                MessageBox.Show("Se prevé un conflicto en esta simulación.");
+            }
         }
 
         private void Mover_Click(object sender, EventArgs e)
@@ -102,6 +106,12 @@ namespace FlightSimulator
             Graphics g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             g.Clear(panelMap.BackColor);
+            Pen penCuadricula = new Pen(Color.FromArgb(210, 220, 235), 1);
+            int xLinea = 0;
+            while (xLinea <= 800) { g.DrawLine(penCuadricula, xLinea, 0, xLinea, 700); xLinea = xLinea + 100; }
+            int yLinea = 0;
+            while (yLinea <= 700) { g.DrawLine(penCuadricula, 0, yLinea, 800, yLinea); yLinea = yLinea + 100; }
+            penCuadricula.Dispose();
 
             Pen penTrayectoria = new Pen(Color.Blue, 2);
             Pen penVerd = new Pen(Color.Green, 2);
@@ -210,8 +220,16 @@ namespace FlightSimulator
         //Botó de predicció de conflicte, que comprova si els vols es trobaran en conflicte en el futur
         private void PrediccionConflicto_Click(object sender, EventArgs e)
         {
-            // es fa al pas 4
+            if (HayConflictoPrevisto())
+            {
+                MessageBox.Show("Se prevé un conflicto.");
+            }
+            else
+            {
+                MessageBox.Show("No se prevén conflictos.");
+            }
         }
+        
 
         private void Reset_Click(object sender, EventArgs e)
         {
@@ -304,6 +322,21 @@ namespace FlightSimulator
                 lblEstadoAlarma.Text = "Sin Conflictos";
                 lblEstadoAlarma.ForeColor = Color.DarkGreen;
             }
+        }
+        // Devuelve true si se prevé un conflicto entre algún par de vuelos
+        private bool HayConflictoPrevisto()
+        {
+            for (int i = 0; i < listaVuelos.DameNum(); i++)
+            {
+                for (int j = i + 1; j < listaVuelos.DameNum(); j++)
+                {
+                    if (listaVuelos.GetFlightPlan(i).PredecirConflicto(listaVuelos.GetFlightPlan(i), listaVuelos.GetFlightPlan(j), distanciaSeguridad))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         private bool cargandoVelocidad = false; //per no guardar un pas fals a l'historial
