@@ -9,7 +9,7 @@ namespace FlightLib
 {
     public class FlightPlanList
     {
-        List<FlightPlan> vuelos = new List<FlightPlan>();
+        List<FlightPlan> vuelos = new List<FlightPlan>(); //cada element de la llista és un avió
 
         public int DameNum()
         {
@@ -18,11 +18,9 @@ namespace FlightLib
 
         public int AddFlightPlan(FlightPlan p)
         {
-
-            {
-                vuelos.Add(p);
-                return 0;
-            }
+            vuelos.Add(p);
+            return 0;
+            
         }
         public FlightPlan GetFlightPlan(int i)
         {
@@ -88,7 +86,7 @@ namespace FlightLib
             {
                 vuelos.Clear();
 
-                using (StreamReader sr = new StreamReader(ruta))
+                using (StreamReader sr = new StreamReader(ruta)) //el using fa que es tanqui sol en acabr, si no hauríem de posar un close
                 {
                     string line = sr.ReadLine();
                     while (line != null)
