@@ -19,6 +19,10 @@ namespace FlightSimulator
             string dataSource = "Data Source=usuaris.db";
             cnx = new SQLiteConnection(dataSource);
             cnx.Open();
+
+            string sqlTabla = "CREATE TABLE IF NOT EXISTS usuaris (username varchar PRIMARY KEY, contrasenya VARCHAR);";
+            SQLiteCommand cmd = new SQLiteCommand(sqlTabla, cnx);
+            int rows = cmd.ExecuteNonQuery();
           
         }
 
@@ -28,7 +32,7 @@ namespace FlightSimulator
             DataTable dt = new DataTable();
             string sqlselect = "SELECT * FROM usuaris WHERE username = '" + username + "'";
             SQLiteDataAdapter adp = new SQLiteDataAdapter(sqlselect, cnx);
-            int rows = adp.Fill(dt);
+            int rows1 = adp.Fill(dt);
             if (dt.Rows.Count > 0)
             {
                 string password = Convert.ToString(dt.Rows[0]["contrasenya"]);
