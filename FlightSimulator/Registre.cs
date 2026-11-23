@@ -32,9 +32,8 @@ namespace FlightSimulator
             if (resultat == 1)
             {
                 MessageBox.Show("Inici de sessió correcte.");
-                MenuForm form1 = new MenuForm();
-                form1.ShowDialog();
                 base1.Cerrar();
+                            
                 this.DialogResult = DialogResult.OK;
                 this.Close();
 
